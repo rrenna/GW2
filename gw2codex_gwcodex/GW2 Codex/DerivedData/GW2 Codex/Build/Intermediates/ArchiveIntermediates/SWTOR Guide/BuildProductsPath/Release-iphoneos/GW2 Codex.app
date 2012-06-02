@@ -1,0 +1,1 @@
+/Users/rrenna360/Documents/Development/GW2CodexNew/gw2codex_gwcodex/GW2 Codex/DerivedData/GW2 Codex/Build/Intermediates/ArchiveIntermediates/SWTOR Guide/InstallationBuildProductsLocation/Applications/GW2 Codex.app

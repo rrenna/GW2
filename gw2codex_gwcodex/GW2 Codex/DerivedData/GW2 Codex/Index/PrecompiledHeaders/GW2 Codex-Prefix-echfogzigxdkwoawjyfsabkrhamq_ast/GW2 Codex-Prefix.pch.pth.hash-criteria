@@ -1,0 +1,33 @@
+Contents of /Users/rrenna360/Documents/Development/GW2CodexNew/gw2codex_gwcodex/GW2 Codex/SWTOR Guide/GW2 Codex-Prefix.pch
+4.0 (tags/Apple/clang-421.0.11) (based on LLVM 3.1svn)
+arm-apple-darwin12.0.0
+-x
+objective-c
+-arch
+armv7
+-fmessage-length=0
+-std=gnu99
+-fpascal-strings
+-Os
+-isysroot
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk
+-g
+-fvisibility=hidden
+-DIBOutlet=__attribute__((iboutlet))
+-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))
+-DIBAction=void)__attribute__((ibaction)
+-miphoneos-version-min=4.0
+-iquote
+-iquote
+-I/Users/rrenna360/Documents/Development/GW2CodexNew/gw2codex_gwcodex/GW2 Codex/DerivedData/GW2 Codex/Build/Intermediates/ArchiveIntermediates/SWTOR Guide/BuildProductsPath/Release-iphoneos/include
+-I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/libxml2
+-I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/usr/include/libxml2/libxml
+-F/Users/rrenna360/Documents/Development/GW2CodexNew/gw2codex_gwcodex/GW2 Codex/DerivedData/GW2 Codex/Build/Intermediates/ArchiveIntermediates/SWTOR Guide/BuildProductsPath/Release-iphoneos
+-F/Applications/Xcode.app/Contents/Developer/Library/Frameworks
+-F/Users/rrenna360/Documents/Development/GW2CodexNew/gw2codex_gwcodex/GW2 Codex/SWTOR Guide
+-ferror-limit=10
+-working-directory=/Users/rrenna360/Documents/Development/GW2CodexNew/gw2codex_gwcodex/GW2 Codex
+-Xclang
+-detailed-preprocessing-record
+-DNS_BLOCK_ASSERTIONS=1
+SDK_PRODUCT_BUILD_VERSION=9B176
