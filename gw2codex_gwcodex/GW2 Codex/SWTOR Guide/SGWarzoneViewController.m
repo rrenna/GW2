@@ -26,6 +26,10 @@
 {
     [super viewDidLoad];
     
+    //Set font of Description text - allows for defaulting to system font on older iOS devices
+    modeLabel.font = primaryFontOfSize(13.0);
+    headlineLabel.font = primaryFontOfSize(13.0);
+    
     modeLabel.text = [_entity valueForKey:@"type"];
     headlineLabel.text = [_entity valueForKey:@"Terrain"];
     DescriptionLabel.text = [_entity valueForKey:@"Description"];

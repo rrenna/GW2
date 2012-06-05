@@ -27,6 +27,15 @@
     [super viewDidLoad];
     [menuScrollView addSubview:menuView];
     menuScrollView.contentSize = menuView.frame.size;
+    
+    newsButtonLabel.font = primaryFontOfSize(11.0);
+    nameGeneratorButtonLabel.font = primaryFontOfSize(11.0);
+    professionsButtonLabel.font = primaryFontOfSize(11.0);
+    raceButtonLabel.font = primaryFontOfSize(11.0);
+    zoneButtonLabel.font = primaryFontOfSize(11.0);
+    warzoneButtonLabel.font = primaryFontOfSize(11.0);
+    aboutButtonLabel.font = primaryFontOfSize(11.0);
+    searchButtonLabel.font = primaryFontOfSize(11.0);
 }
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -35,11 +44,35 @@
     // Release any cached data, images, etc. that aren't in use.
 }
 - (void)viewDidUnload {
+    [newsButtonLabel release];
+    newsButtonLabel = nil;
+    [nameGeneratorButtonLabel release];
+    nameGeneratorButtonLabel = nil;
+    [professionsButtonLabel release];
+    professionsButtonLabel = nil;
+    [raceButtonLabel release];
+    raceButtonLabel = nil;
+    [zoneButtonLabel release];
+    zoneButtonLabel = nil;
+    [warzoneButtonLabel release];
+    warzoneButtonLabel = nil;
+    [aboutButtonLabel release];
+    aboutButtonLabel = nil;
+    [searchButtonLabel release];
+    searchButtonLabel = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 - (void)dealloc {
+    [newsButtonLabel release];
+    [nameGeneratorButtonLabel release];
+    [professionsButtonLabel release];
+    [raceButtonLabel release];
+    [zoneButtonLabel release];
+    [warzoneButtonLabel release];
+    [aboutButtonLabel release];
+    [searchButtonLabel release];
     [super dealloc];
 }
 #pragma mark - IBActions

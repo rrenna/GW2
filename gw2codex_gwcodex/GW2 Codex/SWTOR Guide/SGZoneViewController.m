@@ -31,6 +31,12 @@
     
     //[tabView addTabNamed:@"Items" selected:NO];
 
+    //Set font of Description text - allows for defaulting to system font on older iOS devices
+    AllegianceLabel.font = primaryFontOfSize(13.0);
+    StatusLabel.font = primaryFontOfSize(13.0);
+    RegionLabel.font = primaryFontOfSize(13.0);
+    TerrainLabel.font = primaryFontOfSize(13.0);
+    
     //NameLabel.text = [_entity valueForKey:@""] //NOT NEEDED (Name in title)
     AllegianceLabel.text = [_entity valueForKey:@"Allegiance"];
     StatusLabel.text = [_entity valueForKey:@"Status"];

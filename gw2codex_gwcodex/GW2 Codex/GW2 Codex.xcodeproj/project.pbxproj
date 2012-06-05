@@ -57,6 +57,7 @@
 		F06935AA141348D500E045C9 /* SGCharacterClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F06935A8141348D500E045C9 /* SGCharacterClassViewController.m */; };
 		F06935AB141348D500E045C9 /* SGCharacterClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06935A9141348D500E045C9 /* SGCharacterClassViewController.xib */; };
 		F06935AE1413495A00E045C9 /* SGEntityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F06935AD1413495A00E045C9 /* SGEntityViewController.m */; };
+		F06DFF1C157DC943007A3410 /* SGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F06DFF1B157DC943007A3410 /* SGConstants.m */; };
 		F073DC4D1507A13900B4072B /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F073DC441507A13900B4072B /* back_icon.png */; };
 		F073DC4E1507A13900B4072B /* back_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F073DC451507A13900B4072B /* back_icon@2x.png */; };
 		F073DC4F1507A13900B4072B /* forward_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F073DC461507A13900B4072B /* forward_icon.png */; };
@@ -317,6 +318,8 @@
 		F06935A9141348D500E045C9 /* SGCharacterClassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGCharacterClassViewController.xib; sourceTree = "<group>"; };
 		F06935AC1413495A00E045C9 /* SGEntityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGEntityViewController.h; sourceTree = "<group>"; };
 		F06935AD1413495A00E045C9 /* SGEntityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEntityViewController.m; sourceTree = "<group>"; };
+		F06DFF1A157DC943007A3410 /* SGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGConstants.h; sourceTree = "<group>"; };
+		F06DFF1B157DC943007A3410 /* SGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConstants.m; sourceTree = "<group>"; };
 		F073DC441507A13900B4072B /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon.png; sourceTree = "<group>"; };
 		F073DC451507A13900B4072B /* back_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_icon@2x.png"; sourceTree = "<group>"; };
 		F073DC461507A13900B4072B /* forward_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward_icon.png; sourceTree = "<group>"; };
@@ -1099,6 +1102,8 @@
 				F0D842D6140865E800A6B8CF /* InfoPlist.strings */,
 				F0D842D9140865E800A6B8CF /* main.m */,
 				F0D842DB140865E800A6B8CF /* GW2 Codex-Prefix.pch */,
+				F06DFF1A157DC943007A3410 /* SGConstants.h */,
+				F06DFF1B157DC943007A3410 /* SGConstants.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1612,6 +1617,7 @@
 				F0A6C8241542448B0033C544 /* MDACWebViewController.m in Sources */,
 				F0A6C8251542448B0033C544 /* UIImage+DBMaskedImageAdditions.m in Sources */,
 				F0273785157A5BC400630BF0 /* DataModel.xcdatamodeld in Sources */,
+				F06DFF1C157DC943007A3410 /* SGConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

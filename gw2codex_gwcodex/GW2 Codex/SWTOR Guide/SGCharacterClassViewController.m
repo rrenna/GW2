@@ -33,6 +33,9 @@
     //Setup Tabbar
     //[tabView addTabNamed:@"Skills" selected:NO];
 
+    //Set font of Description text - allows for defaulting to system font on older iOS devices
+    HeadlineLabel.font = primaryFontOfSize(13.0);
+    
     //Setup Overview Content
     HeadlineLabel.text = [_entity valueForKey:@"Headline"];
     DescriptionLabel.text = [_entity valueForKey:@"Description"];

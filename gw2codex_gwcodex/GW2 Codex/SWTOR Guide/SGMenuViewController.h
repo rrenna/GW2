@@ -14,6 +14,15 @@
     IBOutlet UIScrollView* menuScrollView;
     IBOutlet UIView* menuView;
     IBOutlet UIPageControl* pageControl;
+    //Button Labels
+    IBOutlet UILabel *newsButtonLabel;
+    IBOutlet UILabel *nameGeneratorButtonLabel;
+    IBOutlet UILabel *professionsButtonLabel;
+    IBOutlet UILabel *raceButtonLabel;
+    IBOutlet UILabel *zoneButtonLabel;
+    IBOutlet UILabel *warzoneButtonLabel;
+    IBOutlet UILabel *aboutButtonLabel;
+    IBOutlet UILabel *searchButtonLabel;
 }
 
 -(IBAction)search:(id)sender;

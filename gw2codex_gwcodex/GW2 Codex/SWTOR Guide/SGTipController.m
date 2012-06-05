@@ -157,6 +157,7 @@
     voteLabel.shadowColor = [UIColor whiteColor];
     voteLabel.shadowOffset = CGSizeMake(0,1);
     voteLabel.font = [UIFont systemFontOfSize:12];
+    
     [dividerView addSubview:voteLabel];
     
     if([tips count] == 0) 
@@ -180,14 +181,14 @@
 #define CELL_TITLE_FONT @"Helvetica"
 #define CELL_TITLE_SIZE 14
 #define CELL_BODY_FONT @"HoeflerText-Black"
-#define CELL_BODY_SIZE 14
+#define CELL_BODY_SIZE 14.0
 #define CELL_BODY_LINE_BREAK_MODE UILineBreakModeWordWrap
 #define HEIGHT_OF_TITLE 30
 #define HEIGHT_OF_BUTTON 46
 #define CELL_CONTENT_SEPERATOR_PADDING 20
 static int heightOfBody(NSString* body)
 {
-    UIFont *myFont = [UIFont fontWithName:CELL_BODY_FONT size:CELL_BODY_SIZE];
+    UIFont *myFont = primaryFontOfSize(CELL_BODY_SIZE);
     CGSize bodySize = [body sizeWithFont:myFont 
                                              constrainedToSize:CGSizeMake(300, 9999) 
                                                  lineBreakMode:CELL_BODY_LINE_BREAK_MODE];
@@ -215,7 +216,9 @@ static int heightOfBody(NSString* body)
     UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.font = [UIFont fontWithName:@"HoeflerText-Black" size:12];
+
+    //Set font of Description text - allows for defaulting to system font on older iOS devices
+    cell.textLabel.font = primaryFontOfSize(12.0);
     
     //Submit button
     if(indexPath.section == 0)
@@ -247,7 +250,7 @@ static int heightOfBody(NSString* body)
         bodyLabel.textColor = [UIColor colorWithRed:0.862 green:0.141 blue:0.121 alpha:1.0];
 
         bodyLabel.shadowOffset = CGSizeMake(0, 1);
-        bodyLabel.font = [UIFont fontWithName:CELL_BODY_FONT size:CELL_BODY_SIZE];
+        bodyLabel.font = primaryFontOfSize(CELL_BODY_SIZE);
         bodyLabel.lineBreakMode = CELL_BODY_LINE_BREAK_MODE;
         bodyLabel.numberOfLines = 0;
         bodyLabel.text = body;

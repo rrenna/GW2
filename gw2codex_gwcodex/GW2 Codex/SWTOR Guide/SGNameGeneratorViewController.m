@@ -44,6 +44,9 @@
     UIBarButtonItem* shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     self.navigationItem.rightBarButtonItem = shareButton;
     [shareButton release];
+    
+    //Set font of Description text - allows for defaulting to system font on older iOS devices
+    nameLabel.font = primaryFontOfSize(29.0);
 }
 
 #pragma mark - IBActions

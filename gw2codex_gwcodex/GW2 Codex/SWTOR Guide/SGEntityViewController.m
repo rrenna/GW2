@@ -125,6 +125,9 @@ UIColor* colorForEntity(id entity)
     UIBarButtonItem* shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     self.navigationItem.rightBarButtonItem = shareButton;
     [shareButton release];
+    
+    //Set font of Description text - allows for defaulting to system font on older iOS devices
+    DescriptionLabel.font = primaryFontOfSize(13.0);
 }
 -(UIView*)dividerForTitle:(NSString*)title withIconKey:(NSString*)iconKey
 {
