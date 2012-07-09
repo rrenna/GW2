@@ -36,6 +36,6 @@
 -(IBAction)warzones:(id)sender;
 -(IBAction)operations:(id)sender;
 -(IBAction)flashpoints:(id)sender;
--(IBAction)datacrons:(id)sender;
+-(IBAction)dungeons:(id)sender;
 -(IBAction)serverStatus:(id)sender;
 @end

@@ -17,6 +17,7 @@
     NSMutableDictionary* skillTrees;
     NSMutableDictionary* races;
     NSMutableDictionary* locations;
+    NSMutableDictionary* dungeons;
     NSMutableDictionary* warzones;
 }
 -(IBAction)aggregate:(id)sender;

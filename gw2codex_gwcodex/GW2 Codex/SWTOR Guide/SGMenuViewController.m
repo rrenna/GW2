@@ -131,9 +131,9 @@
 {
     [self viewEntityNamed:@"SGFlashpoint" withTitle:@"Flashpoints" usingPredicate:nil];
 }
--(IBAction)datacrons:(id)sender
+-(IBAction)dungeons:(id)sender
 {
-    [self viewEntityNamed:@"SGDatacron" withTitle:@"Datacrons" usingPredicate:nil];
+    [self viewEntityNamed:@"SGDungeon" withTitle:@"Dungeons" usingPredicate:nil];
 }
 -(IBAction)serverStatus:(id)sender
 {

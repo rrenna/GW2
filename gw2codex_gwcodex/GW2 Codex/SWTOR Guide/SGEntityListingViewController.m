@@ -19,8 +19,8 @@
 @end
 
 static CGRect tableFrameMaximized = {0,0,320,460};
-static CGRect tableFrameMinimized = {0,0,320,416};
-static CGRect sortToolbarFrameMaximized = {0,416,320,44};
+static CGRect tableFrameMinimized = {0,0,320,380};
+static CGRect sortToolbarFrameMaximized = {0,380,320,44};
 static CGRect sortToolbarFrameMinimized = {0,460,320,44};
 
 @implementation SGEntityListingViewController
@@ -146,12 +146,12 @@ static CGRect sortToolbarFrameMinimized = {0,460,320,44};
 {
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:moc];
     
-    if([[entity attributesByName] objectForKey:@"Allegiance"])
+    if([[entity attributesByName] objectForKey:@"Region"])
     {
         tableView.frame = tableFrameMinimized;
         sortToolbar.frame = sortToolbarFrameMaximized;
         
-        [sortSegmentedControl setTitle:@"Allegiance" forSegmentAtIndex:1];
+        [sortSegmentedControl setTitle:@"Region" forSegmentAtIndex:1];
     }
     else if ([[entity attributesByName] objectForKey:@"Type"])
     {

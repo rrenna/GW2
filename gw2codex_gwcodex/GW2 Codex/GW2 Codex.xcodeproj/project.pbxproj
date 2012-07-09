@@ -37,6 +37,9 @@
 		F0273790157A5FB200630BF0 /* warzonesButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F027378F157A5FB200630BF0 /* warzonesButton.png */; };
 		F02B5A771457C86400186BC5 /* securityLock.png in Resources */ = {isa = PBXBuildFile; fileRef = F02B5A761457C86400186BC5 /* securityLock.png */; };
 		F02D78A314C5248C00904948 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = F02D78A214C5248C00904948 /* iRate.m */; };
+		F02EC4EE15AA68BA003B51C3 /* dungeonsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F02EC4ED15AA68BA003B51C3 /* dungeonsButton.png */; };
+		F02EC4F415AA866D003B51C3 /* dungeonPreview_AscalonianCatacombs.png in Resources */ = {isa = PBXBuildFile; fileRef = F02EC4F215AA866D003B51C3 /* dungeonPreview_AscalonianCatacombs.png */; };
+		F02EC4F515AA866D003B51C3 /* dungeonPreview_Caudecus'sManor.png in Resources */ = {isa = PBXBuildFile; fileRef = F02EC4F315AA866D003B51C3 /* dungeonPreview_Caudecus'sManor.png */; };
 		F03456FF144C577E009269B0 /* SGCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03456FD144C577E009269B0 /* SGCharacterViewController.m */; };
 		F0345700144C577E009269B0 /* SGCharacterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03456FE144C577E009269B0 /* SGCharacterViewController.xib */; };
 		F037EB4614148BAC0069060C /* Button.png in Resources */ = {isa = PBXBuildFile; fileRef = F037EB4514148BAC0069060C /* Button.png */; };
@@ -290,6 +293,9 @@
 		F02B5A761457C86400186BC5 /* securityLock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = securityLock.png; path = ../../Data/securityLock.png; sourceTree = "<group>"; };
 		F02D78A114C5248C00904948 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
 		F02D78A214C5248C00904948 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
+		F02EC4ED15AA68BA003B51C3 /* dungeonsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dungeonsButton.png; path = ../../Data/Buttons/dungeonsButton.png; sourceTree = "<group>"; };
+		F02EC4F215AA866D003B51C3 /* dungeonPreview_AscalonianCatacombs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dungeonPreview_AscalonianCatacombs.png; path = ../../Data/Dungeons/dungeonPreview_AscalonianCatacombs.png; sourceTree = "<group>"; };
+		F02EC4F315AA866D003B51C3 /* dungeonPreview_Caudecus'sManor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dungeonPreview_Caudecus'sManor.png"; path = "../../Data/Dungeons/dungeonPreview_Caudecus'sManor.png"; sourceTree = "<group>"; };
 		F03456FC144C577E009269B0 /* SGCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCharacterViewController.h; sourceTree = "<group>"; };
 		F03456FD144C577E009269B0 /* SGCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCharacterViewController.m; sourceTree = "<group>"; };
 		F03456FE144C577E009269B0 /* SGCharacterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGCharacterViewController.xib; sourceTree = "<group>"; };
@@ -689,6 +695,15 @@
 				F0B4EF981507051600521D22 /* upStatus.png */,
 			);
 			name = Datacrons;
+			sourceTree = "<group>";
+		};
+		F02EC4F115AA865E003B51C3 /* Dungeons */ = {
+			isa = PBXGroup;
+			children = (
+				F02EC4F215AA866D003B51C3 /* dungeonPreview_AscalonianCatacombs.png */,
+				F02EC4F315AA866D003B51C3 /* dungeonPreview_Caudecus'sManor.png */,
+			);
+			name = Dungeons;
 			sourceTree = "<group>";
 		};
 		F052D596144A7A0B00A7EFA7 /* BHTabBar */ = {
@@ -1181,6 +1196,8 @@
 		F0D8431314088C7500A6B8CF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F02EC4F115AA865E003B51C3 /* Dungeons */,
+				F02EC4ED15AA68BA003B51C3 /* dungeonsButton.png */,
 				F0A6C7C51541CA130033C544 /* infoButton.png */,
 				F0B4EF9A15072AF800521D22 /* serverPopulationLow.png */,
 				F0A6C7C31541C6500033C544 /* zonesButton.png */,
@@ -1528,6 +1545,9 @@
 				F027378D157A5ED500630BF0 /* warzonePreview_ForestofNiflhel.png in Resources */,
 				F027378E157A5ED500630BF0 /* warzonePreview_Siege.png in Resources */,
 				F0273790157A5FB200630BF0 /* warzonesButton.png in Resources */,
+				F02EC4EE15AA68BA003B51C3 /* dungeonsButton.png in Resources */,
+				F02EC4F415AA866D003B51C3 /* dungeonPreview_AscalonianCatacombs.png in Resources */,
+				F02EC4F515AA866D003B51C3 /* dungeonPreview_Caudecus'sManor.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

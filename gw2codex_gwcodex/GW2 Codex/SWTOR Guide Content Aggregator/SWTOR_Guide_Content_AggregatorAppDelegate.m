@@ -33,7 +33,7 @@
 }
 - (NSString*)externalStorageDirectory
 {
-    NSString* pathToDataFolder = @"file://localhost/Users/rrenna360/Documents/Development/GW2CodexNew/gw2codex_gwcodex/Data/";
+    NSString* pathToDataFolder = @"file://localhost/Users/rrenna360/Documents/Development/GW2Codex/gw2codex_gwcodex/Data/";
 
     NSURL* url = [NSURL URLWithString:pathToDataFolder];
     return url;
