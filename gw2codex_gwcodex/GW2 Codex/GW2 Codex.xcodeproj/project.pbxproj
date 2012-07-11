@@ -40,6 +40,13 @@
 		F02EC4EE15AA68BA003B51C3 /* dungeonsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F02EC4ED15AA68BA003B51C3 /* dungeonsButton.png */; };
 		F02EC4F415AA866D003B51C3 /* dungeonPreview_AscalonianCatacombs.png in Resources */ = {isa = PBXBuildFile; fileRef = F02EC4F215AA866D003B51C3 /* dungeonPreview_AscalonianCatacombs.png */; };
 		F02EC4F515AA866D003B51C3 /* dungeonPreview_Caudecus'sManor.png in Resources */ = {isa = PBXBuildFile; fileRef = F02EC4F315AA866D003B51C3 /* dungeonPreview_Caudecus'sManor.png */; };
+		F02EC50215ABCA30003B51C3 /* dungeonPreview_Sorrow'sEmbrace.png in Resources */ = {isa = PBXBuildFile; fileRef = F02EC50015ABCA30003B51C3 /* dungeonPreview_Sorrow'sEmbrace.png */; };
+		F02EC50315ABCA30003B51C3 /* dungeonPreview_Arah.png in Resources */ = {isa = PBXBuildFile; fileRef = F02EC50115ABCA30003B51C3 /* dungeonPreview_Arah.png */; };
+		F02EC50715ABE5A9003B51C3 /* zonePreview_PlainsOfAshford.png in Resources */ = {isa = PBXBuildFile; fileRef = F02EC50515ABE5A9003B51C3 /* zonePreview_PlainsOfAshford.png */; };
+		F02EC50815ABE5A9003B51C3 /* zonePreview_MetricaProvince.png in Resources */ = {isa = PBXBuildFile; fileRef = F02EC50615ABE5A9003B51C3 /* zonePreview_MetricaProvince.png */; };
+		F02EC50A15ADA5CF003B51C3 /* zonePreview_MountMaelstrom.png in Resources */ = {isa = PBXBuildFile; fileRef = F02EC50915ADA5CF003B51C3 /* zonePreview_MountMaelstrom.png */; };
+		F02EC50C15ADA666003B51C3 /* zonePreview_CaledonForest.png in Resources */ = {isa = PBXBuildFile; fileRef = F02EC50B15ADA666003B51C3 /* zonePreview_CaledonForest.png */; };
+		F02EC50E15ADA84A003B51C3 /* zonePreview_FrostgorgeSound.png in Resources */ = {isa = PBXBuildFile; fileRef = F02EC50D15ADA84A003B51C3 /* zonePreview_FrostgorgeSound.png */; };
 		F03456FF144C577E009269B0 /* SGCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03456FD144C577E009269B0 /* SGCharacterViewController.m */; };
 		F0345700144C577E009269B0 /* SGCharacterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03456FE144C577E009269B0 /* SGCharacterViewController.xib */; };
 		F037EB4614148BAC0069060C /* Button.png in Resources */ = {isa = PBXBuildFile; fileRef = F037EB4514148BAC0069060C /* Button.png */; };
@@ -296,6 +303,13 @@
 		F02EC4ED15AA68BA003B51C3 /* dungeonsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dungeonsButton.png; path = ../../Data/Buttons/dungeonsButton.png; sourceTree = "<group>"; };
 		F02EC4F215AA866D003B51C3 /* dungeonPreview_AscalonianCatacombs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dungeonPreview_AscalonianCatacombs.png; path = ../../Data/Dungeons/dungeonPreview_AscalonianCatacombs.png; sourceTree = "<group>"; };
 		F02EC4F315AA866D003B51C3 /* dungeonPreview_Caudecus'sManor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dungeonPreview_Caudecus'sManor.png"; path = "../../Data/Dungeons/dungeonPreview_Caudecus'sManor.png"; sourceTree = "<group>"; };
+		F02EC50015ABCA30003B51C3 /* dungeonPreview_Sorrow'sEmbrace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dungeonPreview_Sorrow'sEmbrace.png"; path = "../../Data/Dungeons/dungeonPreview_Sorrow'sEmbrace.png"; sourceTree = "<group>"; };
+		F02EC50115ABCA30003B51C3 /* dungeonPreview_Arah.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dungeonPreview_Arah.png; path = ../../Data/Dungeons/dungeonPreview_Arah.png; sourceTree = "<group>"; };
+		F02EC50515ABE5A9003B51C3 /* zonePreview_PlainsOfAshford.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zonePreview_PlainsOfAshford.png; path = ../../Data/Zones/zonePreview_PlainsOfAshford.png; sourceTree = "<group>"; };
+		F02EC50615ABE5A9003B51C3 /* zonePreview_MetricaProvince.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zonePreview_MetricaProvince.png; path = ../../Data/Zones/zonePreview_MetricaProvince.png; sourceTree = "<group>"; };
+		F02EC50915ADA5CF003B51C3 /* zonePreview_MountMaelstrom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zonePreview_MountMaelstrom.png; path = ../../Data/Zones/zonePreview_MountMaelstrom.png; sourceTree = "<group>"; };
+		F02EC50B15ADA666003B51C3 /* zonePreview_CaledonForest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zonePreview_CaledonForest.png; path = ../../Data/Zones/zonePreview_CaledonForest.png; sourceTree = "<group>"; };
+		F02EC50D15ADA84A003B51C3 /* zonePreview_FrostgorgeSound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zonePreview_FrostgorgeSound.png; path = ../../Data/Zones/zonePreview_FrostgorgeSound.png; sourceTree = "<group>"; };
 		F03456FC144C577E009269B0 /* SGCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCharacterViewController.h; sourceTree = "<group>"; };
 		F03456FD144C577E009269B0 /* SGCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCharacterViewController.m; sourceTree = "<group>"; };
 		F03456FE144C577E009269B0 /* SGCharacterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGCharacterViewController.xib; sourceTree = "<group>"; };
@@ -613,6 +627,11 @@
 		F00879F61411D9100015AA82 /* Zones */ = {
 			isa = PBXGroup;
 			children = (
+				F02EC50D15ADA84A003B51C3 /* zonePreview_FrostgorgeSound.png */,
+				F02EC50B15ADA666003B51C3 /* zonePreview_CaledonForest.png */,
+				F02EC50915ADA5CF003B51C3 /* zonePreview_MountMaelstrom.png */,
+				F02EC50515ABE5A9003B51C3 /* zonePreview_PlainsOfAshford.png */,
+				F02EC50615ABE5A9003B51C3 /* zonePreview_MetricaProvince.png */,
 				F0196FC61541113E00FEC71F /* zonePreview_BlackCitidel.png */,
 				F0196FC71541113E00FEC71F /* zonePreview_Divinity'sReach.png */,
 				F0A6C7BE1541BF940033C544 /* zonePreview_TheGrove.png */,
@@ -701,6 +720,8 @@
 			isa = PBXGroup;
 			children = (
 				F02EC4F215AA866D003B51C3 /* dungeonPreview_AscalonianCatacombs.png */,
+				F02EC50015ABCA30003B51C3 /* dungeonPreview_Sorrow'sEmbrace.png */,
+				F02EC50115ABCA30003B51C3 /* dungeonPreview_Arah.png */,
 				F02EC4F315AA866D003B51C3 /* dungeonPreview_Caudecus'sManor.png */,
 			);
 			name = Dungeons;
@@ -1548,6 +1569,13 @@
 				F02EC4EE15AA68BA003B51C3 /* dungeonsButton.png in Resources */,
 				F02EC4F415AA866D003B51C3 /* dungeonPreview_AscalonianCatacombs.png in Resources */,
 				F02EC4F515AA866D003B51C3 /* dungeonPreview_Caudecus'sManor.png in Resources */,
+				F02EC50215ABCA30003B51C3 /* dungeonPreview_Sorrow'sEmbrace.png in Resources */,
+				F02EC50315ABCA30003B51C3 /* dungeonPreview_Arah.png in Resources */,
+				F02EC50715ABE5A9003B51C3 /* zonePreview_PlainsOfAshford.png in Resources */,
+				F02EC50815ABE5A9003B51C3 /* zonePreview_MetricaProvince.png in Resources */,
+				F02EC50A15ADA5CF003B51C3 /* zonePreview_MountMaelstrom.png in Resources */,
+				F02EC50C15ADA666003B51C3 /* zonePreview_CaledonForest.png in Resources */,
+				F02EC50E15ADA84A003B51C3 /* zonePreview_FrostgorgeSound.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

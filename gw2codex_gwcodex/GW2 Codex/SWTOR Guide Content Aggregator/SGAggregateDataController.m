@@ -18,8 +18,10 @@
 #define ALLEGIANCE_INDEPENDENT @"Independent"
 #define ALLEGIANCE_NONE @"No Government"
 
-//Zones 
-#define UNKNOWN_ZONE @"Unknown"
+//Locations
+#define UNKNOWN_LOCATION @"Unknown"
+
+//Zones
 #define RATA_SUM @"Rata Sum"
 #define DIVINITYS_REACH @"Divinity's Reach"
 #define BLACK_CITIDEL @"Black Citidel"
@@ -28,6 +30,8 @@
 #define PLAINS_OF_ASHFORD @"Plains of Ashford"
 #define METRICA_PROVINCE @"Metrica Province"
 #define CALEDON_FOREST @"Caledon Forest"
+#define FROSTGORGE_SOUND @"Frostgorge Sound"
+#define MOUNT_MAELSTROM @"Mount Maelstrom"
 
 //Regions
 #define SHIVERPEAK_MOUNTAINS @"Shiverpeak Mountains"
@@ -285,6 +289,14 @@
     id caledonForest = addZone(CALEDON_FOREST,MAGUUMA_JUNGLE);
     [caledonForest setValue:@"Caledon Forest contains many temple ruins and is inhabited by \"great cats\" as they are called by Gullik Oddsson, who went hunting there once for the cats' pelts. Dougal Keane has visited this site in the past as well. Furthermore, The Grove is also located within Caledon Forest." forKey:@"Description"];
     addStartingRace(caledonForest,SYLVARI);
+    
+    id frostgorgeSound = addZone(FROSTGORGE_SOUND,SHIVERPEAK_MOUNTAINS);
+    [frostgorgeSound setValue:@"Frostgorge Sound is a high level zone found in northern most reaches of the Shiverpeak Mountains, its defining feature the eponymous sound caused by the rise of the Elder Dragon Jormag. Three kodan sanctuaries can be found here, including the Honor of the Waves which is said to be sinking." forKey:@"Description"];
+    //TODO: Fill in Frostgorge Sound
+    
+    id mountMaelstrom = addZone(MOUNT_MAELSTROM,UNKNOWN_LOCATION);
+    [mountMaelstrom setValue:@"Mount Maelstrom is a high level zone on the southern tip of the Steamspur Mountains. Its named after a massive volcano that caused the previously snow-capped region to melt. The Crucible of Eternity, an Inquest lab, can be found here as well." forKey:@"Description"];
+    //TODO: Fill in Mount Maelstrom - find region
 }
 -(void)addDungeons
 {
@@ -301,19 +313,35 @@
     id ascalonianCatacombs = addDungeon(@"Ascalonian Catacombs",PLAINS_OF_ASHFORD);
     [ascalonianCatacombs setValue:@"The Ascalonian Catacombs are an underground region in the charr territory of Ascalon. Thought to have been lost after the Searing cut off access, they are part of humanity's legacy in the region. It serves as a dungeon for characters up to level 30 in story mode and up to 35 in explorable mode, in which the player must put restless spirits that haunt the catacombs to peace. Players above the maximum levels can still enter, but will be scaled down to a maximum of 4 levels above the level limit.\n\nIn the story version of the dungeon, Eir Stegalkin is hunting for the remains of King Adelbern's sword, Magdaer, and Rytlock is attempting to stop her before she stirs up the restless spirits of the Ascalonian ghosts. During this attempt, it is discovered that a powerful darkness is welling up from the depths beneath the dungeon.\n\nIn the explorable versions, the Durmand Priory is attempting to solve the issue of the unknown darkness and the players must choose one of three methods to go about this. Each method has its own dungeon version, determining what the team fights.\n\n Many of the spirits are those of the trainers who lived during the time of the Searing." forKey:@"Description"];
     
-    id caudecussManor = addDungeon(@"Caudecus's Manor",UNKNOWN_ZONE);
+    id caudecussManor = addDungeon(@"Caudecus's Manor",UNKNOWN_LOCATION);
     [caudecussManor setValue:@"Caudecus's Manor is a dungeon, owned by and named after Legate Minister Caudecus Beetlestone. It is located on the northern end of the Shire of Beetletun" forKey:@"Description"];
     //TODO: Expand Caudecus's Manor - Specify Zone
     
-    id twilightArbor = addDungeon(@"Twilight Arbor",UNKNOWN_ZONE);
+    id twilightArbor = addDungeon(@"Twilight Arbor",CALEDON_FOREST);
     [twilightArbor setValue:@"Twilight Arbor is a level 50 dungeon in the Tarnished Coast." forKey:@"Description"];
     //TODO: Expand Twilight Arbor - Specify Zone
     
-    id sorrowsEmrace;
-    id citadelOfFlame;
-    id crucibleOfEternity;
-    id honorOfTheWaves;
-    id arah;
+    id sorrowsEmrace = addDungeon(@"Sorrow's Embrace",UNKNOWN_LOCATION);
+    [sorrowsEmrace setValue:@"Sorrow's Embrace was once called Sorrow's Furnace. It was a mine and main base of the Stone Summit dwarves before their defeat and exile into the Far Shiverpeaks in 1072 AE. After the dwarves left, the dredge claimed the area as their own. The technology and magic found in Sorrow's Furnace was left intact.\n\nSorrow's Embrace is a level 60-70 dungeon. In story mode you discover that some dredge have sold others of their kind into slavery under the Seraph, and battle the Iron Forgeman over a pit of lava. In explorer mode you can help the Dredge revolt against their masters. Players will also engage Destroyers and the Inquest." forKey:@"Description"];
+    //TODO: Expand Sorrow's Embrace - Specify Zone
+    
+    id citadelOfFlame = addDungeon(@"Citadel of Flame",UNKNOWN_LOCATION);
+    [citadelOfFlame setValue:@"Citadel of Flame is a level 70 dungeon in Ascalon." forKey:@"Description"];
+    //TODO: Expand Citadel of Flame - Specify Zone
+
+    
+    id crucibleOfEternity = addDungeon(@"Crucible of Eternity",MOUNT_MAELSTROM);
+    [citadelOfFlame setValue:@"The Crucible of Eternity is a location on the shores of Steamspur Bay, standing in roughly the same location of what was the dwarven city of Droknar's Forge. The area has changed in the past 250 years, with the lands warming and the new presence of a nearby volcano. This confluence seems to have appealed to members of the Inquest, who have established a base of operations upon the site." forKey:@"Description"];
+    //TODO: Expand Crucible of Eternity - Specify Zone
+    
+    id honorOfTheWaves = addDungeon(@"Honor of the Waves",FROSTGORGE_SOUND);
+    [honorOfTheWaves setValue:@"Honor of the Waves is a level 80 dungeon in the Northern Shiverpeaks." forKey:@"Description"];
+    //TODO: Expand Honor of the Waves - Expand description
+
+    
+    id arah = addDungeon(@"Arah",UNKNOWN_LOCATION);
+    [honorOfTheWaves setValue:@"Presumably built by the gods (as they were its inhabitants), Arah is a holy city situated on the peninsula of Orr. As the city was lost to the sea shortly prior to the events of the original Guild Wars, little is known of the city's actual appearance save that it has many spired towers. Following the Exodus the human Kingdom of Orr assumed stewardship of the city, watching over it in anticipation of the day when the gods would return. However their protection of the city would come to a catastrophic end in an event that became known as the Cataclysm.\n\nDuring the Guild Wars, open fighting in the streets of Arah had led to hostilities between the three human nations of Tyria. As such, the nations did not unite against the threat of the charr invasion, each choosing to stand alone. In 1070 AE the Searing shattered Ascalon's defenses and allowed the invading charr to push into Orrian territory, driven by the orders of their titan gods to destroy Arah. In 1071 AE, before they could raze the city, Vizier Khilbron, the adviser to King Reza, used magic buried in a vault deep beneath Arah and brought about the Cataclysm, destroying the charr invasion and the Kingdom of Orr in an instant. Arah sank beneath the waves of the Bay of Sirens (later renamed the Sea of Sorrows to reflect this) with the rest of the peninsula and was thought lost, fulfilling the wish of the god Abaddon.\n\nHowever, nearly 150 years after the destruction of Orr, a new power stirred in the sunken ruins of Arah. The deathless dragon Zhaitan woke from an ancient slumber and raised the drowned Kingdom to the surface once again. The ruins of Arah are now his lair and the main base of operations for the undead legions and fleets that maintain a stranglehold on Tyria's sea routes." forKey:@"Description"];
+    //TODO: Expand Honor of the Waves - Specify Zone
 }
 -(void)addWarzones
 {
