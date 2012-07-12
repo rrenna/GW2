@@ -31,6 +31,7 @@
     [super viewDidLoad];
     
     //Setup Tabbar
+    [tabView addTabNamed:@"Abilities" selected:NO];
     //[tabView addTabNamed:@"Skills" selected:NO];
 
     //Set font of Description text - allows for defaulting to system font on older iOS devices
@@ -39,6 +40,9 @@
     //Setup Overview Content
     HeadlineLabel.text = [_entity valueForKey:@"Headline"];
     DescriptionLabel.text = [_entity valueForKey:@"Description"];
+    uniqueAttributeLabel.text = [_entity valueForKey:@"uniqueSkill"];
+    uniqueAttributeEffectLabel.text = [_entity valueForKey:@"uniqueSkillEffect"];
+    specialAbilityLabel.text = [_entity valueForKey:@"specialAbilitiesDescription"];
     
     //Setup Progression Content
     //Shared skill tree
@@ -76,13 +80,20 @@
      */
      
     
-    int heightSaved = 0;
-    heightSaved += resizeLabelToTopAlignmentReturningHeightReduced(HeadlineLabel);
-    moveViewForSavedSpace(DescriptionLabel, heightSaved);
-    heightSaved += resizeLabelToTopAlignmentReturningHeightReduced(DescriptionLabel);
-    resizeViewForSavedSpace(contentView, heightSaved);
+    int generalHeightSaved = 0;
+    int specialAbilitiesHeightSaved = 0;
     
-    resizeContentSizeForSavedSpace(scrollView,heightSaved);
+    generalHeightSaved += resizeLabelToTopAlignmentReturningHeightReduced(HeadlineLabel);
+    moveViewForSavedSpace(DescriptionLabel, generalHeightSaved);
+    generalHeightSaved += resizeLabelToTopAlignmentReturningHeightReduced(DescriptionLabel);
+    resizeViewForSavedSpace(contentView, generalHeightSaved);
+    
+    resizeContentSizeForSavedSpace(scrollView,generalHeightSaved);
+    
+    //Abilities Tab
+    resizeLabelToTopAlignmentReturningHeightReduced(uniqueAttributeEffectLabel);
+    specialAbilitiesHeightSaved += resizeLabelToTopAlignmentReturningHeightReduced(specialAbilityLabel);
+    resizeViewForSavedSpace(specialAbilityView, specialAbilitiesHeightSaved);
 }
 /*-(NSString*)htmlSummaryOfEntity
 {
@@ -149,10 +160,10 @@
 {
     [super didTapTabNamed:tabName];
     
-    if([tabName isEqualToString:@"Crew"])
+    if([tabName isEqualToString:@"Abilities"])
     {
-        scrollView.contentSize = crewView.frame.size;
-        [scrollView addSubview:crewView];
+        scrollView.contentSize = specialAbilityView.frame.size;
+        [scrollView addSubview:specialAbilityView];
     }
     else if([tabName isEqualToString:@"Skills"])
     {

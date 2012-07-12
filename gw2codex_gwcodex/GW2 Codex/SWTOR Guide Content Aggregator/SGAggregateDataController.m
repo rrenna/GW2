@@ -32,6 +32,7 @@
 #define CALEDON_FOREST @"Caledon Forest"
 #define FROSTGORGE_SOUND @"Frostgorge Sound"
 #define MOUNT_MAELSTROM @"Mount Maelstrom"
+#define FIREHEART_RISE @"Fireheart Rise"
 
 //Regions
 #define SHIVERPEAK_MOUNTAINS @"Shiverpeak Mountains"
@@ -112,10 +113,12 @@
 
 -(void)addClasses
 {
-    id(^addClass)(NSString*,NSString*) = ^(NSString* name,NSString* allegiance) 
+    id(^addClass)(NSString*,NSString*,NSString*,NSString*) = ^(NSString* name,NSString* allegiance,NSString* uniqueSkill,NSString* uniqueSkillEffect)
     {
         id characterClass = [NSEntityDescription insertNewObjectForEntityForName:@"SGCharacterClass" inManagedObjectContext:moc];
         [characterClass setValue:name forKey:@"Name"];
+        [characterClass setValue:uniqueSkill forKey:@"uniqueSkill"];
+        [characterClass setValue:uniqueSkillEffect forKey:@"uniqueSkillEffect"];
         [characterClass setValue:allegiance forKey:@"Allegiance"];
         [characterClass setValue:[NSString stringWithFormat:@"classPreview_%@",[name stringByReplacingOccurrencesOfString:@" " withString:@""]] forKey:@"PreviewBackgroundFilename"];
         [classes setObject :characterClass forKey:name];
@@ -123,39 +126,47 @@
     };
     
     //Mesmer
-    id mesmer = addClass(MESMER,ALLEGIANCE_REPUBLIC);
+    id mesmer = addClass(MESMER,ALLEGIANCE_REPUBLIC,@"Guile",@"Decreases recharge rate of shattering skills");
     [mesmer setValue:@"Mesmers are magical duelists who rely on deception and confusion to keep their opponents in check. Indecision is their greatest ally. Using powerful illusions to distract, they make sure they never go toe to toe with an enemy; they use their powers and tactics to set up an unfair fight. Just when you think you've figured out what the mesmer is doing, illusions begin to shatter, clones start to fade away, and you realize you've been swinging at empty air all along. It's hard to keep your eye on the real mesmer." forKey:@"Description"];
     [mesmer setValue:@"When I'm done with you, you won't trust your own mind." forKey:@"Headline"];
+    [mesmer setValue:@"An illusion is a mind trick exclusive to mesmer profession, which manifest itself physically. They will only attack the target upon which they were summoned and cannot be directly controlled. Anyone can see or attack the mesmer's illusions. They can only exist for as long as that target is alive and can only be dispelled by attacking the illusion itself. A mesmer can maintain up to three illusions at a time, with the oldest illusion being replaced by the newly created one.\n\nThere are two kinds of illusions: clones and phantasms." forKey:@"specialAbilitiesDescription"];
     
-    id engineer = addClass(ENGINEER,ALLEGIANCE_REPUBLIC);
+    id engineer = addClass(ENGINEER,ALLEGIANCE_REPUBLIC,@"Ingenuity",@"Decreases recharge rate of tool belt skills");
     [engineer setValue:@"Masters of mechanical mayhem, engineers tinker with explosives, gadgets, elixirs, and all manner of deployable devices. They can take control of an area by placing turrets, support their allies with alchemic weaponry, or lay waste to foes with a wide array of mines, bombs, and grenades." forKey:@"Description"];
     [engineer setValue:@"I'd explain it all to you, but a demonstration would be more useful." forKey:@"Headline"];
+    [engineer setValue:@"The tool belt is a special ability exclusive to the engineer profession. It enhances the effectiveness and functionality of the engineer's utility and heal skills. There are 4 tool belt skill slots which are activated using the keys F1-F4. Each of the skills equipped into the healing or utility skill bar slots fill one of these slots with a specialty skill. Examples are healing slot skills give a self heal in the tool belt. Turrets get an option for self-destruct.\n\nEvery healing and utility skill utilized by the engineer has an appropriate tool belt counterpart." forKey:@"specialAbilitiesDescription"];
     
-    id thief = addClass(THIEF,ALLEGIANCE_REPUBLIC);
+        
+    id thief = addClass(THIEF,ALLEGIANCE_REPUBLIC,@"Cunning",@"Decreases recharge rate of stealing");
     [thief setValue:@"A master of stealth and surprise, the thief is deadly in single combat—particularly when catching enemies off guard. Thieves compensate for their relatively low armor and health by being quick and evasive. They can move through the shadows, vanish into thin air, or steal items from their opponents and use them as weapons. Enemies should watch their backs, or the thief will watch it for them." forKey:@"Description"];
     [thief setValue:@"I'm sorry, did this belong to you?" forKey:@"Headline"];
+    [thief setValue:@"Stealing is a mechanic unique to the thief profession, which doesn't break stealth. By using the steal skill, the character will shadow step to the enemy and steal an item from them. After an item has been stolen, it will be \"pocketed\" and replace your steal skill until used. Steal will begin to recharge immediately after activation, but is only available again after the stolen item is used.\n\nEach enemy in the game has a small pool of possible items to steal.[2] For example, a character may steal an egg from a moa and use it as a healing item, or steal feathers from it and use them to blind enemies. In PvP the stolen items are profession-specific, for example the thief can get a rifle or a hammer from a warrior, while an elementalist might have a scepter or a lava rock.\n\nStolen items from players are not actually taken from them; the thief just gains access to the associated steal skill." forKey:@"specialAbilitiesDescription"];
     
-    id guardian = addClass(GUARDIAN,ALLEGIANCE_REPUBLIC);
+    id guardian = addClass(GUARDIAN,ALLEGIANCE_REPUBLIC,@"Willpower",@"Decreases recharge rate of virtues");
     [guardian setValue:@"The guardian is a devoted fighter who calls upon powerful virtues to smite enemies and protect allies. As dangerous with a staff as he is with a mighty two-handed hammer, a true guardian is a master tactician who knows when to sacrifice his own defenses to empower his allies to achieve victory." forKey:@"Description"];
     [guardian setValue:@"I'll guard you. Let them come through ME first!" forKey:@"Headline"];
+    [guardian setValue:@"Virtues are special abilities exclusive to the guardian profession. These abilities apply continuous passive benefits to the guardian as that character adventures, or they can be activated as something similar to shouts, granting an immediate benefit to all nearby allies. Activating one of these virtues will disable its passive effect until that ability recharges once again. Each virtue has its own recharge so may be used independently of the others.\n\nThe benefits of the same virtues do not stack. Two guardians using the same virtue at the same time will not increase the effects of the virtue. Different virtues do not have this limitation.\n\nVirtues can be affected by guardian traits." forKey:@"specialAbilitiesDescription"];
     
-    id necromancer = addClass(NECROMANCER,ALLEGIANCE_REPUBLIC);
+    
+    id necromancer = addClass(NECROMANCER,ALLEGIANCE_REPUBLIC,@"Hunger",@"Increases the life force pool");
     [necromancer setValue:@"A necromancer is a practitioner of the dark arts who summons the dead, wields the power of lost souls, and literally sucks the lifeblood of the enemy. A necromancer feeds on life force, which he can use to cheat death or bring allies back from the brink." forKey:@"Description"];
     [necromancer setValue:@"The great thing about minions is that they never las long enough to work up a horrid stench." forKey:@"Headline"];
+    [necromancer setValue:@"Death Shroud is the necromancer's unique mechanic providing some passive benefits and replacing the necromancer's normal weapon skills with a fixed set of Death Shroud skills. It is fueled by life force and can be entered at any time, so long as there is any life force. Upon leaving Death Shroud, there is a 10-second cooldown before it can be used again.\n\nLife force is the necromancers resource that fuels Death Shroud. Life force is gained when foes die nearby and through certain skills. Death Shroud depletes life force and ends when it reaches zero. Life force capacity is increased by attribute Hunger. The life force bar (located above weapon and off-hand skills) displays life force level." forKey:@"specialAbilitiesDescription"];
     
-    id ranger = addClass(RANGER,ALLEGIANCE_REPUBLIC);
+    id ranger = addClass(RANGER,ALLEGIANCE_REPUBLIC,@"Empathy",@"Increases attributes of pet");
     [ranger setValue:@"The ranger is a jack-of-all-trades and a master of them all as well, relying on his keen eye, steady hand, or the power of nature itself. A master of ranged combat, the ranger is capable of striking unwitting foes from a distance with his bow. With a stable of pets at his command, a ranger can adapt to his opponents' strengths and weaknesses." forKey:@"Description"];
     [ranger setValue:@"Good dog! Hold the enemy down while I shoot them! You get a biscuit!" forKey:@"Headline"];
-
+    [ranger setValue:@"Pets are permanent AI-controlled NPC allies which are the ranger's special profession mechanic. A pet has a family, such as bear, which determines most of their skills and its general attributes. Its species, such as a polar bear or a brown bear, determines a unique skill. Its type; aquatic, terrestrial or amphibious, determines which environments the pet is able to operate in.\n\nThe ranger has limited control over the actions of their pet; they can set the aggressiveness of the pet and activate a skill, otherwise a pet's action is automatically controled and based on what the ranger does in combat. A ranger can have any number of tamed pets, but only four pets are immediately available to call into battle and only one can be active in the world." forKey:@"specialAbilitiesDescription"];
     
-    id warrior = addClass(WARRIOR,ALLEGIANCE_REPUBLIC);
+    id warrior = addClass(WARRIOR,ALLEGIANCE_REPUBLIC,@"Brawn",@"Increases damage of burst skill");
     [warrior setValue:@"The warrior is a master of weapons who relies on speed, strength, toughness, and heavy armor to survive in battle. A warrior can shrug off blow after blow to stay in the fight, all the while building up adrenaline to fuel his offense." forKey:@"Description"];
     [warrior setValue:@"Axe or Mace? Rifle or Greatsword? You know, they're all good." forKey:@"Headline"];
+    [warrior setValue:@"Burst attacks are a warrior profession mechanic that expend all built-up adrenaline. Each weapon has one burst skill that improves at three different stages of adrenaline. This improvement can be anything from doing more damage, adding additional conditions, increasing condition duration, or increasing skill duration. The burst skill does not take a skill slot and is automatically chosen according to the two-handed weapon equiped or, in case of dual-wielding, the weapon equipped in the main hand.\n\nAdrenaline is a resource unique to the warrior profession. Each attack made by the warrior in combat grants one \"strike\" of adrenaline. Strikes of adrenaline accumulate into three stages. Each stage takes 10 strikes to fill." forKey:@"specialAbilitiesDescription"];
     
-    id elementalist = addClass(ELEMENTALIST,ALLEGIANCE_REPUBLIC);
+    id elementalist = addClass(ELEMENTALIST,ALLEGIANCE_REPUBLIC,@"Intelligence",@"Decreases recharge rate of all attunements");
     [elementalist setValue:@"The elementalist channels natural forces of destruction, making fire, air, earth, and water do her bidding. What the elementalist lacks in physical toughness, she makes up for in her ability to inflict massive damage in a single attack, dropping foes from a distance before they can become a threat. Yet, despite her incredible offensive potential, versatility is what makes the elementalist truly formidable." forKey:@"Description"];
     [elementalist setValue:@"Fire, Air, Earth, and Water. I can deal death with any of them." forKey:@"Headline"];
-    
+    [elementalist setValue:@"An attunement is a special type of skill exclusive to the elementalist profession. There are four attunement skills in total, representing the elements of earth, fire, air and water. Because they are special skills, they are located separately just above the skill bar. These skills are assigned buttons F1 to F4 on the keyboard (by default).\n\nActivating an attunement changes the first five skills on the skill bar, releases an immediate area of effect around the elementalist and from there provides the character with a passive, ongoing effect so long as they are attuned to that element. Elementalists' hands also become enveloped by an aura which identifies that character's attunement.\n\nAttunements activate instantly and can be activated mid-cast. When one is activated, the previous attunement recharges for 15 seconds, while the other two recharge for 1 second. Both of these recharges can be reduced by the Intelligence attribute.\n\nElementalists do not have a normal state of activity, and unless directed by an environmental weapon, they are always attuned to an element in any given situation." forKey:@"specialAbilitiesDescription"];
     
 
     
@@ -276,71 +287,82 @@
     [theGrove setValue:@"The Grove, created by the Pale Tree, is a multilevel, verdant, organic city. The roots and branches of the tree form broad terraces where other plants have grown and been spun into homes and buildings. Some of the sylvari have lived their entire lives beneath the tree, but most choose to wander, to adventure, and to let the Dream take them where it may.\n\nThe sylvari are divided into houses or cycles, and feel that an individual's personality is determined by time of day when they awaken. The sylvari born in the Cycle of Dawn tend to be loquacious and diplomatic. Those of the Cycle of Day are often problem-solvers, meeting challenges head-on. The sylvari of the Cycle of Dusk tend to be intelligent and reflective. And those of the Cycle of Night are quiet, secretive, and keep their own counsel.\n\nThe firstborn are the closest thing the sylvari have to rulers, yet the respect they command comes solely from their wisdom and time spent in the world. Each cycle is advised by one of the firstborn who serves as a luminary, as a guide and tutor, to the newly awakened. Yet the ultimate ruler of the people is their parent, the Pale Tree herself. Her song is found in all sylvari, and those who seek understanding travel to the heart of the tree to commune with her and seek her wisdom." forKey:@"Description"];
     
     id plainsOfAshford = addZone(PLAINS_OF_ASHFORD,ASCALON);
+    [plainsOfAshford setValue:@"Plains" forKey:@"Terrain"];
     [plainsOfAshford setValue:@"Long ago, the human kingdom of Ascalon occupied the Plains of Ashford. Now, the ruins of that once-great nation tumble across the landscape, and the ghosts of the past haunt any who pass through their territory." forKey:@"Status"];
     [plainsOfAshford setValue:@"The Plains of Ashford is the charr starting area. New charr players start in the Village of Smokestead." forKey:@"Description"];
      addStartingRace(plainsOfAshford,CHARR);
     //TODO: Fill in Plains of Ashford
     
     id metricaProvince = addZone(METRICA_PROVINCE,MAGUUMA_JUNGLE);
-    [theGrove setValue:@"Metrica Province is the starting area for Asura players and home to Rata Sum. In the original Guild Wars, this area was known as Riven Earth." forKey:@"Description"];
+    [metricaProvince setValue:@"Forested Grasslands" forKey:@"Terrain"];
+    [metricaProvince setValue:@"Metrica Province is the starting area for Asura players and home to Rata Sum. Metrica Province is a vivid, exotic jungle area full of high-tech laboratories, quirky golems, and competing krewes of mad scientists. In the original Guild Wars, this area was known as Riven Earth." forKey:@"Description"];
     //TODO: Fill in Metrica Province
     addStartingRace(metricaProvince,ASURA);
     
     id caledonForest = addZone(CALEDON_FOREST,MAGUUMA_JUNGLE);
+    [caledonForest setValue:@"Forests" forKey:@"Terrain"];
     [caledonForest setValue:@"Caledon Forest contains many temple ruins and is inhabited by \"great cats\" as they are called by Gullik Oddsson, who went hunting there once for the cats' pelts. Dougal Keane has visited this site in the past as well. Furthermore, The Grove is also located within Caledon Forest." forKey:@"Description"];
     addStartingRace(caledonForest,SYLVARI);
     
     id frostgorgeSound = addZone(FROSTGORGE_SOUND,SHIVERPEAK_MOUNTAINS);
+    [frostgorgeSound setValue:@"Rough Snowy" forKey:@"Terrain"];
     [frostgorgeSound setValue:@"Frostgorge Sound is a high level zone found in northern most reaches of the Shiverpeak Mountains, its defining feature the eponymous sound caused by the rise of the Elder Dragon Jormag. Three kodan sanctuaries can be found here, including the Honor of the Waves which is said to be sinking." forKey:@"Description"];
     //TODO: Fill in Frostgorge Sound
     
     id mountMaelstrom = addZone(MOUNT_MAELSTROM,UNKNOWN_LOCATION);
+    [mountMaelstrom setValue:@"Volcanic" forKey:@"Terrain"];
     [mountMaelstrom setValue:@"Mount Maelstrom is a high level zone on the southern tip of the Steamspur Mountains. Its named after a massive volcano that caused the previously snow-capped region to melt. The Crucible of Eternity, an Inquest lab, can be found here as well." forKey:@"Description"];
     //TODO: Fill in Mount Maelstrom - find region
+    
+    id fireheartRise = addZone(FIREHEART_RISE,ASCALON);
+    [fireheartRise setValue:@"Unknown" forKey:@"Terrain"];
+    [fireheartRise setValue:@"Fireheart Rise is a high level zone located in the northernmost reaches of Ascalon. The Flame Legion's Citadel of Flame has been established here." forKey:@"Description"];
+    //TODO: Fill in FIREHEART RISE - find more details, fill in terrain type
 }
 -(void)addDungeons
 {
-    id(^addDungeon)(NSString*,NSString*) = ^(NSString* name,NSString* location)
+    id(^addDungeon)(NSString*,NSString*,NSString*) = ^(NSString* name,NSString* location, NSString* difficulty)
     {
         id dungeon = [NSEntityDescription insertNewObjectForEntityForName:@"SGDungeon" inManagedObjectContext:moc];
         [dungeon setValue:name forKey:@"Name"];
         [dungeon setValue:[locations objectForKey:location] forKey:@"location"];
+        [dungeon setValue:difficulty forKey:@"GameLevel"];
         [dungeon setValue:[NSString stringWithFormat:@"dungeonPreview_%@",[name stringByReplacingOccurrencesOfString:@" " withString:@""]] forKey:@"PreviewBackgroundFilename"];
         [dungeons setObject:dungeon forKey:name];
         return dungeon;
     };
     
-    id ascalonianCatacombs = addDungeon(@"Ascalonian Catacombs",PLAINS_OF_ASHFORD);
+    id ascalonianCatacombs = addDungeon(@"Ascalonian Catacombs",PLAINS_OF_ASHFORD,@"Level 30 to 35");
     [ascalonianCatacombs setValue:@"The Ascalonian Catacombs are an underground region in the charr territory of Ascalon. Thought to have been lost after the Searing cut off access, they are part of humanity's legacy in the region. It serves as a dungeon for characters up to level 30 in story mode and up to 35 in explorable mode, in which the player must put restless spirits that haunt the catacombs to peace. Players above the maximum levels can still enter, but will be scaled down to a maximum of 4 levels above the level limit.\n\nIn the story version of the dungeon, Eir Stegalkin is hunting for the remains of King Adelbern's sword, Magdaer, and Rytlock is attempting to stop her before she stirs up the restless spirits of the Ascalonian ghosts. During this attempt, it is discovered that a powerful darkness is welling up from the depths beneath the dungeon.\n\nIn the explorable versions, the Durmand Priory is attempting to solve the issue of the unknown darkness and the players must choose one of three methods to go about this. Each method has its own dungeon version, determining what the team fights.\n\n Many of the spirits are those of the trainers who lived during the time of the Searing." forKey:@"Description"];
     
-    id caudecussManor = addDungeon(@"Caudecus's Manor",UNKNOWN_LOCATION);
+    id caudecussManor = addDungeon(@"Caudecus's Manor",UNKNOWN_LOCATION,@"Unknown Difficulty");
     [caudecussManor setValue:@"Caudecus's Manor is a dungeon, owned by and named after Legate Minister Caudecus Beetlestone. It is located on the northern end of the Shire of Beetletun" forKey:@"Description"];
     //TODO: Expand Caudecus's Manor - Specify Zone
     
-    id twilightArbor = addDungeon(@"Twilight Arbor",CALEDON_FOREST);
+    id twilightArbor = addDungeon(@"Twilight Arbor",CALEDON_FOREST,@"Level 50");
     [twilightArbor setValue:@"Twilight Arbor is a level 50 dungeon in the Tarnished Coast." forKey:@"Description"];
     //TODO: Expand Twilight Arbor - Specify Zone
     
-    id sorrowsEmrace = addDungeon(@"Sorrow's Embrace",UNKNOWN_LOCATION);
+    id sorrowsEmrace = addDungeon(@"Sorrow's Embrace",UNKNOWN_LOCATION,@"Level 60 to 70");
     [sorrowsEmrace setValue:@"Sorrow's Embrace was once called Sorrow's Furnace. It was a mine and main base of the Stone Summit dwarves before their defeat and exile into the Far Shiverpeaks in 1072 AE. After the dwarves left, the dredge claimed the area as their own. The technology and magic found in Sorrow's Furnace was left intact.\n\nSorrow's Embrace is a level 60-70 dungeon. In story mode you discover that some dredge have sold others of their kind into slavery under the Seraph, and battle the Iron Forgeman over a pit of lava. In explorer mode you can help the Dredge revolt against their masters. Players will also engage Destroyers and the Inquest." forKey:@"Description"];
     //TODO: Expand Sorrow's Embrace - Specify Zone
     
-    id citadelOfFlame = addDungeon(@"Citadel of Flame",UNKNOWN_LOCATION);
-    [citadelOfFlame setValue:@"Citadel of Flame is a level 70 dungeon in Ascalon." forKey:@"Description"];
+    id citadelOfFlame = addDungeon(@"Citadel of Flame",FIREHEART_RISE,@"Level 70");
+    [citadelOfFlame setValue:@"The Flame Citadel is a city in the northernmost reaches of Ascalon. It resides within the Fireheart Rise." forKey:@"Description"];
     //TODO: Expand Citadel of Flame - Specify Zone
 
     
-    id crucibleOfEternity = addDungeon(@"Crucible of Eternity",MOUNT_MAELSTROM);
-    [citadelOfFlame setValue:@"The Crucible of Eternity is a location on the shores of Steamspur Bay, standing in roughly the same location of what was the dwarven city of Droknar's Forge. The area has changed in the past 250 years, with the lands warming and the new presence of a nearby volcano. This confluence seems to have appealed to members of the Inquest, who have established a base of operations upon the site." forKey:@"Description"];
+    id crucibleOfEternity = addDungeon(@"Crucible of Eternity",MOUNT_MAELSTROM,@"Unknown Difficulty");
+    [crucibleOfEternity setValue:@"The Crucible of Eternity is a location on the shores of Steamspur Bay, standing in roughly the same location of what was the dwarven city of Droknar's Forge. The area has changed in the past 250 years, with the lands warming and the new presence of a nearby volcano. This confluence seems to have appealed to members of the Inquest, who have established a base of operations upon the site." forKey:@"Description"];
     //TODO: Expand Crucible of Eternity - Specify Zone
     
-    id honorOfTheWaves = addDungeon(@"Honor of the Waves",FROSTGORGE_SOUND);
+    id honorOfTheWaves = addDungeon(@"Honor of the Waves",FROSTGORGE_SOUND,@"Level 70 to 80");
     [honorOfTheWaves setValue:@"Honor of the Waves is a level 80 dungeon in the Northern Shiverpeaks." forKey:@"Description"];
     //TODO: Expand Honor of the Waves - Expand description
 
     
-    id arah = addDungeon(@"Arah",UNKNOWN_LOCATION);
-    [honorOfTheWaves setValue:@"Presumably built by the gods (as they were its inhabitants), Arah is a holy city situated on the peninsula of Orr. As the city was lost to the sea shortly prior to the events of the original Guild Wars, little is known of the city's actual appearance save that it has many spired towers. Following the Exodus the human Kingdom of Orr assumed stewardship of the city, watching over it in anticipation of the day when the gods would return. However their protection of the city would come to a catastrophic end in an event that became known as the Cataclysm.\n\nDuring the Guild Wars, open fighting in the streets of Arah had led to hostilities between the three human nations of Tyria. As such, the nations did not unite against the threat of the charr invasion, each choosing to stand alone. In 1070 AE the Searing shattered Ascalon's defenses and allowed the invading charr to push into Orrian territory, driven by the orders of their titan gods to destroy Arah. In 1071 AE, before they could raze the city, Vizier Khilbron, the adviser to King Reza, used magic buried in a vault deep beneath Arah and brought about the Cataclysm, destroying the charr invasion and the Kingdom of Orr in an instant. Arah sank beneath the waves of the Bay of Sirens (later renamed the Sea of Sorrows to reflect this) with the rest of the peninsula and was thought lost, fulfilling the wish of the god Abaddon.\n\nHowever, nearly 150 years after the destruction of Orr, a new power stirred in the sunken ruins of Arah. The deathless dragon Zhaitan woke from an ancient slumber and raised the drowned Kingdom to the surface once again. The ruins of Arah are now his lair and the main base of operations for the undead legions and fleets that maintain a stranglehold on Tyria's sea routes." forKey:@"Description"];
+    id arah = addDungeon(@"Arah",UNKNOWN_LOCATION,@"Unknown Difficulty");
+    [arah setValue:@"Presumably built by the gods (as they were its inhabitants), Arah is a holy city situated on the peninsula of Orr. As the city was lost to the sea shortly prior to the events of the original Guild Wars, little is known of the city's actual appearance save that it has many spired towers. Following the Exodus the human Kingdom of Orr assumed stewardship of the city, watching over it in anticipation of the day when the gods would return. However their protection of the city would come to a catastrophic end in an event that became known as the Cataclysm.\n\nDuring the Guild Wars, open fighting in the streets of Arah had led to hostilities between the three human nations of Tyria. As such, the nations did not unite against the threat of the charr invasion, each choosing to stand alone. In 1070 AE the Searing shattered Ascalon's defenses and allowed the invading charr to push into Orrian territory, driven by the orders of their titan gods to destroy Arah. In 1071 AE, before they could raze the city, Vizier Khilbron, the adviser to King Reza, used magic buried in a vault deep beneath Arah and brought about the Cataclysm, destroying the charr invasion and the Kingdom of Orr in an instant. Arah sank beneath the waves of the Bay of Sirens (later renamed the Sea of Sorrows to reflect this) with the rest of the peninsula and was thought lost, fulfilling the wish of the god Abaddon.\n\nHowever, nearly 150 years after the destruction of Orr, a new power stirred in the sunken ruins of Arah. The deathless dragon Zhaitan woke from an ancient slumber and raised the drowned Kingdom to the surface once again. The ruins of Arah are now his lair and the main base of operations for the undead legions and fleets that maintain a stranglehold on Tyria's sea routes." forKey:@"Description"];
     //TODO: Expand Honor of the Waves - Specify Zone
 }
 -(void)addWarzones

@@ -13,8 +13,12 @@
 {
     //Overview
     IBOutlet UILabel* HeadlineLabel;
-    //Crew
-    IBOutlet UIView* crewView;
+    IBOutlet UILabel* uniqueAttributeLabel;
+    IBOutlet UILabel* uniqueAttributeEffectLabel;
+    
+    //Special Abilities
+    IBOutlet UIView* specialAbilityView;
+    IBOutlet UILabel* specialAbilityLabel;
     
     //Progression
     IBOutlet UIView* progressionView;

@@ -67,6 +67,13 @@
 		F06935AA141348D500E045C9 /* SGCharacterClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F06935A8141348D500E045C9 /* SGCharacterClassViewController.m */; };
 		F06935AB141348D500E045C9 /* SGCharacterClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06935A9141348D500E045C9 /* SGCharacterClassViewController.xib */; };
 		F06935AE1413495A00E045C9 /* SGEntityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F06935AD1413495A00E045C9 /* SGEntityViewController.m */; };
+		F06A5A0415AE5A6B00487329 /* SGDungeonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06A5A0315AE5A6B00487329 /* SGDungeonViewController.xib */; };
+		F06A5A0815AE5B2700487329 /* SGDungeonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F06A5A0715AE5B2700487329 /* SGDungeonViewController.m */; };
+		F06A5A0F15AE767B00487329 /* dungeonPreview_CitadelofFlame.png in Resources */ = {isa = PBXBuildFile; fileRef = F06A5A0E15AE767B00487329 /* dungeonPreview_CitadelofFlame.png */; };
+		F06A5A1215AE768F00487329 /* zonePreview_FireheartRise.png in Resources */ = {isa = PBXBuildFile; fileRef = F06A5A1115AE768F00487329 /* zonePreview_FireheartRise.png */; };
+		F06A5A1615AE77C700487329 /* dungeonPreview_TwilightArbor.png in Resources */ = {isa = PBXBuildFile; fileRef = F06A5A1315AE77C700487329 /* dungeonPreview_TwilightArbor.png */; };
+		F06A5A1715AE77C700487329 /* dungeonPreview_HonoroftheWaves.png in Resources */ = {isa = PBXBuildFile; fileRef = F06A5A1415AE77C700487329 /* dungeonPreview_HonoroftheWaves.png */; };
+		F06A5A1815AE77C700487329 /* dungeonPreview_CrucibleofEternity.png in Resources */ = {isa = PBXBuildFile; fileRef = F06A5A1515AE77C700487329 /* dungeonPreview_CrucibleofEternity.png */; };
 		F06DFF1C157DC943007A3410 /* SGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F06DFF1B157DC943007A3410 /* SGConstants.m */; };
 		F073DC4D1507A13900B4072B /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F073DC441507A13900B4072B /* back_icon.png */; };
 		F073DC4E1507A13900B4072B /* back_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F073DC451507A13900B4072B /* back_icon@2x.png */; };
@@ -338,6 +345,14 @@
 		F06935A9141348D500E045C9 /* SGCharacterClassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGCharacterClassViewController.xib; sourceTree = "<group>"; };
 		F06935AC1413495A00E045C9 /* SGEntityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGEntityViewController.h; sourceTree = "<group>"; };
 		F06935AD1413495A00E045C9 /* SGEntityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEntityViewController.m; sourceTree = "<group>"; };
+		F06A5A0315AE5A6B00487329 /* SGDungeonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGDungeonViewController.xib; sourceTree = "<group>"; };
+		F06A5A0615AE5B2700487329 /* SGDungeonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDungeonViewController.h; sourceTree = "<group>"; };
+		F06A5A0715AE5B2700487329 /* SGDungeonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDungeonViewController.m; sourceTree = "<group>"; };
+		F06A5A0E15AE767B00487329 /* dungeonPreview_CitadelofFlame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dungeonPreview_CitadelofFlame.png; path = ../../Data/Dungeons/dungeonPreview_CitadelofFlame.png; sourceTree = "<group>"; };
+		F06A5A1115AE768F00487329 /* zonePreview_FireheartRise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zonePreview_FireheartRise.png; path = ../../Data/Zones/zonePreview_FireheartRise.png; sourceTree = "<group>"; };
+		F06A5A1315AE77C700487329 /* dungeonPreview_TwilightArbor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dungeonPreview_TwilightArbor.png; path = ../../Data/Dungeons/dungeonPreview_TwilightArbor.png; sourceTree = "<group>"; };
+		F06A5A1415AE77C700487329 /* dungeonPreview_HonoroftheWaves.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dungeonPreview_HonoroftheWaves.png; path = ../../Data/Dungeons/dungeonPreview_HonoroftheWaves.png; sourceTree = "<group>"; };
+		F06A5A1515AE77C700487329 /* dungeonPreview_CrucibleofEternity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dungeonPreview_CrucibleofEternity.png; path = ../../Data/Dungeons/dungeonPreview_CrucibleofEternity.png; sourceTree = "<group>"; };
 		F06DFF1A157DC943007A3410 /* SGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGConstants.h; sourceTree = "<group>"; };
 		F06DFF1B157DC943007A3410 /* SGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConstants.m; sourceTree = "<group>"; };
 		F073DC441507A13900B4072B /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon.png; sourceTree = "<group>"; };
@@ -627,6 +642,7 @@
 		F00879F61411D9100015AA82 /* Zones */ = {
 			isa = PBXGroup;
 			children = (
+				F06A5A1115AE768F00487329 /* zonePreview_FireheartRise.png */,
 				F02EC50D15ADA84A003B51C3 /* zonePreview_FrostgorgeSound.png */,
 				F02EC50B15ADA666003B51C3 /* zonePreview_CaledonForest.png */,
 				F02EC50915ADA5CF003B51C3 /* zonePreview_MountMaelstrom.png */,
@@ -719,6 +735,10 @@
 		F02EC4F115AA865E003B51C3 /* Dungeons */ = {
 			isa = PBXGroup;
 			children = (
+				F06A5A1315AE77C700487329 /* dungeonPreview_TwilightArbor.png */,
+				F06A5A1415AE77C700487329 /* dungeonPreview_HonoroftheWaves.png */,
+				F06A5A1515AE77C700487329 /* dungeonPreview_CrucibleofEternity.png */,
+				F06A5A0E15AE767B00487329 /* dungeonPreview_CitadelofFlame.png */,
 				F02EC4F215AA866D003B51C3 /* dungeonPreview_AscalonianCatacombs.png */,
 				F02EC50015ABCA30003B51C3 /* dungeonPreview_Sorrow'sEmbrace.png */,
 				F02EC50115ABCA30003B51C3 /* dungeonPreview_Arah.png */,
@@ -780,6 +800,8 @@
 				F0D50BD1145E0F0300805C9C /* SGOperationViewController.m */,
 				F0E1C6991418371F0094D111 /* SGFlashpointViewController.m */,
 				F0DED4CB141993DF004787AE /* SGWarzoneViewController.h */,
+				F06A5A0615AE5B2700487329 /* SGDungeonViewController.h */,
+				F06A5A0715AE5B2700487329 /* SGDungeonViewController.m */,
 				F0DED4CC141993DF004787AE /* SGWarzoneViewController.m */,
 				F0A6CE0A14454FF8005C2519 /* SGCraftingSkillViewController.h */,
 				F0A6CE0B14454FF8005C2519 /* SGCraftingSkillViewController.m */,
@@ -796,6 +818,7 @@
 		F06935B014134E5100E045C9 /* Entity Viewers */ = {
 			isa = PBXGroup;
 			children = (
+				F06A5A0315AE5A6B00487329 /* SGDungeonViewController.xib */,
 				F0D59157152CC42900286B19 /* SGRaceViewController.xib */,
 				F047DE3E14BDC48B00583B44 /* SGDatacronViewController.xib */,
 				F0DF3FB0145657F900913DC9 /* SGSkillTreeViewController.xib */,
@@ -1576,6 +1599,12 @@
 				F02EC50A15ADA5CF003B51C3 /* zonePreview_MountMaelstrom.png in Resources */,
 				F02EC50C15ADA666003B51C3 /* zonePreview_CaledonForest.png in Resources */,
 				F02EC50E15ADA84A003B51C3 /* zonePreview_FrostgorgeSound.png in Resources */,
+				F06A5A0415AE5A6B00487329 /* SGDungeonViewController.xib in Resources */,
+				F06A5A0F15AE767B00487329 /* dungeonPreview_CitadelofFlame.png in Resources */,
+				F06A5A1215AE768F00487329 /* zonePreview_FireheartRise.png in Resources */,
+				F06A5A1615AE77C700487329 /* dungeonPreview_TwilightArbor.png in Resources */,
+				F06A5A1715AE77C700487329 /* dungeonPreview_HonoroftheWaves.png in Resources */,
+				F06A5A1815AE77C700487329 /* dungeonPreview_CrucibleofEternity.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1666,6 +1695,7 @@
 				F0A6C8251542448B0033C544 /* UIImage+DBMaskedImageAdditions.m in Sources */,
 				F0273785157A5BC400630BF0 /* DataModel.xcdatamodeld in Sources */,
 				F06DFF1C157DC943007A3410 /* SGConstants.m in Sources */,
+				F06A5A0815AE5B2700487329 /* SGDungeonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,7 @@
 -(void)sortToolbarDisplay;
 @end
 
-static CGRect tableFrameMaximized = {0,0,320,460};
+static CGRect tableFrameMaximized = {0,0,320,420};
 static CGRect tableFrameMinimized = {0,0,320,380};
 static CGRect sortToolbarFrameMaximized = {0,380,320,44};
 static CGRect sortToolbarFrameMinimized = {0,460,320,44};

@@ -45,25 +45,33 @@
     DescriptionLabel.text = [_entity valueForKey:@"Description"];
     
     int heightSaved = 0;
-     //Remove starting classes table if no classes assigned
-    id startingRace = [_entity valueForKey:@"startingRace"];
-    if(!startingRace)
-    {
-        heightSaved += tableView.frame.size.height;
-        tableView.hidden = YES;
-    }
     
     heightSaved += resizeLabelToTopAlignmentReturningHeightReduced(TerrainLabel);
     
     //moveViewForSavedSpace(TerrainLabel, StatusLabel);
     heightSaved += resizeLabelToTopAlignmentReturningHeightReduced(StatusLabel);
     
-    
     moveViewForSavedSpace(DescriptionLabel, heightSaved);
     heightSaved += resizeLabelToTopAlignmentReturningHeightReduced(DescriptionLabel);
 
     
     resizeContentSizeForSavedSpace(scrollView,heightSaved);
+    
+    //Remove starting classes table if no classes assigned
+    id startingRace = [_entity valueForKey:@"startingRace"];
+    if(!startingRace)
+    {
+        moveViewForSavedSpace(StatusLabel,tableView.frame.size.height);
+        moveViewForSavedSpace(DescriptionLabel,tableView.frame.size.height);
+        tableView.hidden = YES;
+    }
+    //If there is no status assigned - move the description up 79 px
+    if(!StatusLabel.text)
+    {
+        moveViewForSavedSpace(DescriptionLabel, 15);
+    }
+    
+    
 }
 #pragma mark - BHTabsViewDelegate methods
 - (void)didTapTabNamed:(NSString *)tabName
