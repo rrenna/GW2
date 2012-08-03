@@ -83,7 +83,8 @@
     int generalHeightSaved = 0;
     int specialAbilitiesHeightSaved = 0;
     
-    generalHeightSaved += resizeLabelToTopAlignmentReturningHeightReduced(HeadlineLabel);
+    //General Tab
+    generalHeightSaved += resizeLabelToTopAlignmentReturningHeightReduced(HeadlineLabel);    
     moveViewForSavedSpace(DescriptionLabel, generalHeightSaved);
     generalHeightSaved += resizeLabelToTopAlignmentReturningHeightReduced(DescriptionLabel);
     resizeViewForSavedSpace(contentView, generalHeightSaved);
@@ -93,7 +94,11 @@
     //Abilities Tab
     resizeLabelToTopAlignmentReturningHeightReduced(uniqueAttributeEffectLabel);
     specialAbilitiesHeightSaved += resizeLabelToTopAlignmentReturningHeightReduced(specialAbilityLabel);
+    
+    moveViewForSavedSpace(weaponTypesTableView, specialAbilitiesHeightSaved);
+    
     resizeViewForSavedSpace(specialAbilityView, specialAbilitiesHeightSaved);
+    
 }
 /*-(NSString*)htmlSummaryOfEntity
 {
@@ -173,17 +178,15 @@
 }
 #pragma mark - UITableView Delegate & Datasource methods
 #define CELL_HEIGHT 30
-#define TAG_STARSHIP_TABLE 0
-#define TAG_COMPANIONS_TABLE 1
-#define TAG_RACES_LEFT_TABLE 2
-#define TAG_RACES_RIGHT_TABLE 3
-#define TAG_CREW_SKILLS_TABLE 4
+#define TAG_STARTING_ZONE_TABLE 0
+#define TAG_WEAPONS_TABLE 1
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    if(tableView.tag == TAG_STARTING_PLANET_TABLE)
+   
+    if(tableView.tag == TAG_STARTING_ZONE_TABLE)
     {
+         /*
         id entity = [_entity valueForKey:@"startingPlanet"];
         if(entity)
         {
@@ -191,21 +194,21 @@
             
             [self.navigationController pushViewController:entityViewController animated:YES];
             [entityViewController release];
-        }
+        }     */
 
     }
-     */
-    if(tableView.tag == TAG_STARSHIP_TABLE)
+    if(tableView.tag == TAG_WEAPONS_TABLE)
     {
-        id entity = [_entity valueForKey:@"ship"];
+        /*id entity = [_entity valueForKey:@"ship"];
         if(entity)
         {
             SGEntityViewController* entityViewController = [[[SGAppDelegate viewerRegisteredForEntityNamed:@"SGShip"] alloc] initWithEntity:entity];
             
             [self.navigationController pushViewController:entityViewController animated:YES];
             [entityViewController release];
-        }
+        }*/
     }
+    /*
     else if(tableView.tag == TAG_COMPANIONS_TABLE)
     {
         NSArray* companions = [[_entity valueForKey:@"companions"] sortedArrayUsingComparator:^NSComparisonResult
@@ -245,20 +248,29 @@
             [self.navigationController pushViewController:entityViewController animated:YES];
             [entityViewController release];
         }
-    }
+    }*/
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    if(tableView.tag == TAG_WEAPONS_TABLE)
+    {
+        return 4; //Main Hand, Off Hand, Two Hands, Aquatic
+    }
+    return 1;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(tableView.tag == TAG_STARSHIP_TABLE)
+    if(tableView.tag == TAG_STARTING_ZONE_TABLE)
     {
-        return 1; //Starships
+        return 1; //Zones
     }
-    else if(tableView.tag == TAG_COMPANIONS_TABLE)
+    else if(tableView.tag == TAG_WEAPONS_TABLE)
     {
-        return 5; //Companions
+        return 1; //Weapons - 1 row per type
     }
+    /*
     else if(tableView.tag == TAG_CREW_SKILLS_TABLE)
     {
         return [[_entity valueForKey:@"craftingSkills"] count]; //Companions
@@ -270,6 +282,10 @@
         int rows = ([playableRaces count] / 2) + remainder;
         return rows; //Playable Races
     }
+     */
+    else{
+        return 0;
+    }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -279,8 +295,8 @@
 {
     UITableViewCell* cell = nil;
     
-    if(tableView.tag == TAG_STARSHIP_TABLE)
-    {
+    if(tableView.tag == TAG_STARTING_ZONE_TABLE)
+    {/*
         id ships = [_entity valueForKey:@"ship"];
         if(!ships)
         {
@@ -318,31 +334,52 @@
             cell.backgroundView = backgroundImageView;
             backgroundImageView.alpha = 0.8;
             
-        }
+        }*/
     }
-    else if(tableView.tag == TAG_COMPANIONS_TABLE)
+    else if(tableView.tag == TAG_WEAPONS_TABLE)
     {
-        //Companions
-        NSArray* companions = [[_entity valueForKey:@"companions"] sortedArrayUsingComparator:^NSComparisonResult
-        (id obj1, id obj2) 
+        NSString* weaponCategoryKey;
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        
+        //Weapons
+        if(indexPath.section == 0)
         {
-            NSNumber* companionOrder1 = [obj1 valueForKey:@"order"];
-            NSNumber* companionOrder2 = [obj2 valueForKey:@"order"];
-            
-            if([companionOrder1 intValue] < [companionOrder2 intValue])
-            {
-                return NSOrderedAscending;
-            }
-            else
-            {
-                return NSOrderedDescending;
-            }
-        }];
-        if([companions count] == 0)
+            weaponCategoryKey = @"mainHandWeaponTypes";
+        }
+        else if(indexPath.section == 1)
+        {
+            weaponCategoryKey = @"offHandWeaponTypes";
+        }
+        else if(indexPath.section == 2)
+        {
+            weaponCategoryKey = @"twoHandWeaponTypes";
+        }
+        else if(indexPath.section == 3)
+        {
+            weaponCategoryKey = @"aquaticWeaponTypes";
+        }
+        
+        id weaponCollection = [[_entity valueForKey:weaponCategoryKey] sortedArrayUsingComparator:^NSComparisonResult
+                                     (id obj1, id obj2)
+                                     {
+                                         NSNumber* companionOrder1 = [obj1 valueForKey:@"Name"];
+                                         NSNumber* companionOrder2 = [obj2 valueForKey:@"Name"];
+                                         
+                                         if([companionOrder1 intValue] < [companionOrder2 intValue])
+                                         {
+                                             return NSOrderedAscending;
+                                         }
+                                         else
+                                         {
+                                             return NSOrderedDescending;
+                                         }
+                                     }];
+        
+        
+        
+        if([weaponCollection count] == 0)
         {
             //Return a "No starting classes" row
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-            
             cell.textLabel.textColor = [UIColor darkGrayColor];
             cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:13];
             cell.textLabel.shadowOffset = CGSizeMake(0,1);
@@ -352,26 +389,47 @@
         }
         else
         {
-            id companion = [[companions allObjects] objectAtIndex:indexPath.row];
-            NSString* name = [companion valueForKey:@"Name"];
-            CGRect cellRect = CGRectMake(0, 0, 320, CELL_HEIGHT);
+            int counter = 0;
+            #define weaponIconWidth 35
+            #define weaponIconHeight 30
+            #define weaponIconSpacing 15
+            for(id weapon in [weaponCollection allObjects])
+            {
+                NSString* name = [weapon valueForKey:@"Name"];
+                
+                NSString* imageName = [name stringByReplacingOccurrencesOfString:@" " withString:@""];
+                UIImageView* weaponIconView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:imageName]];
+                weaponIconView.contentMode = UIViewContentModeScaleAspectFit;
+                weaponIconView.frame = CGRectMake(weaponIconWidth * counter + (weaponIconSpacing * (counter + 1)), 0, weaponIconWidth, weaponIconHeight);
+                
+                [cell.contentView addSubview:weaponIconView];
+                
+                [weaponIconView release];
+                counter++;
+            }
             
-            NSString* planetPreviewFilename = [companion valueForKey:@"PreviewBackgroundFilename"];
-            UIImage* backgroundImage = [UIImage imageNamed:planetPreviewFilename];
+            /*
+             id mainHandWeapon = [[mainHandWeapons allObjects] objectAtIndex:indexPath.row];
+             NSString* name = [mainHandWeapon valueForKey:@"Name"];
+             CGRect cellRect = CGRectMake(0, 0, 320, CELL_HEIGHT);
+             
+             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+             cell.textLabel.textColor = [UIColor whiteColor];
+             cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:13];
+             cell.textLabel.shadowOffset = CGSizeMake(0,1);
+             cell.textLabel.shadowColor = [UIColor darkGrayColor];
+             cell.textLabel.textAlignment = UITextAlignmentLeft;
+             cell.textLabel.text = [mainHandWeapon valueForKey:@"Name"];
+             cell.selectionStyle = UITableViewCellSelectionStyleGray;
+             [cell.imageView setImage:[UIImage imageNamed:name]];
+             */
             
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-            cell.textLabel.textColor = [UIColor whiteColor];
-            cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:13];
-            cell.textLabel.shadowOffset = CGSizeMake(0,1);
-            cell.textLabel.shadowColor = [UIColor darkGrayColor];
-            cell.textLabel.textAlignment = UITextAlignmentLeft;
-            cell.textLabel.text = [companion valueForKey:@"Name"];
-            cell.selectionStyle = UITableViewCellSelectionStyleGray;
+            cell.backgroundView = nil;
             
-            cell.backgroundView = [self backgroundViewForEntity:companion];
             
         }
     }
+    /*
     else if(tableView.tag == TAG_CREW_SKILLS_TABLE)
     {
         //Crew Skills
@@ -438,7 +496,7 @@
             [cell.imageView setImage:[UIImage imageNamed:raceIconName]];
         }
 
-    }
+    }*/
     
     cell.backgroundColor = [UIColor clearColor];
     
@@ -446,14 +504,12 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if(tableView.tag == TAG_STARSHIP_TABLE || tableView.tag == TAG_COMPANIONS_TABLE || tableView.tag == TAG_CREW_SKILLS_TABLE)
-    {
-        return HEIGHT_FOR_DIVIDER;
-    }
-    else
+    if(tableView.tag == TAG_STARTING_ZONE_TABLE)
     {
         return 0;
     }
+    
+    return HEIGHT_FOR_DIVIDER;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
@@ -466,10 +522,26 @@
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView* header = nil;
-    if(tableView.tag == TAG_STARSHIP_TABLE)
+    if(tableView.tag == TAG_WEAPONS_TABLE)
     {
-        header = [self dividerForTitle:@"Starship" withIconKey:@"Starships"];
-    }
+        if(section == 0)
+        {
+            header = [self dividerForTitle:@"Main Hand Weapons" withIconKey:@"Weapons"];
+        }
+        else if(section == 1)
+        {
+            header = [self dividerForTitle:@"Off Hand Weapons" withIconKey:@"Weapons"];
+        }
+        else if(section == 2)
+        {
+            header = [self dividerForTitle:@"Two-Handed Weapons" withIconKey:@"Weapons"];
+        }
+        else 
+        {
+            header = [self dividerForTitle:@"Aquatic Weapons" withIconKey:@"Weapons"];
+        }
+
+    }/*
     else if(tableView.tag == TAG_COMPANIONS_TABLE)
     {
         header = [self dividerForTitle:@"Companions" withIconKey:@"Companions"];
@@ -477,7 +549,7 @@
     else if(tableView.tag == TAG_CREW_SKILLS_TABLE)
     {
         header = [self dividerForTitle:@"Crafting Skills" withIconKey:@"Skills"];
-    }
+    }*/
     else
     {
         header = [self dividerForTitle:nil withIconKey:nil];

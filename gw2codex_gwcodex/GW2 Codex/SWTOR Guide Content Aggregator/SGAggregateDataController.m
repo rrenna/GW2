@@ -185,6 +185,171 @@
     [trooper addAdvancedClassesObject:commando];
     */
 }
+-(void)addWeaponTypes
+{
+    id(^addWeaponType)(NSString*) = ^(NSString* name)
+    {
+        id weaponType = [NSEntityDescription insertNewObjectForEntityForName:@"SGWeaponType" inManagedObjectContext:moc];
+        [weaponType setValue:name forKey:@"Name"];
+        [weaponType setValue:[NSNumber numberWithBool:NO] forKey:@"Searchable"];
+        
+        [weaponType setValue:[NSString stringWithFormat:@"weaponTypePreview_%@",[name stringByReplacingOccurrencesOfString:@" " withString:@""]] forKey:@"PreviewBackgroundFilename"];
+        return weaponType;
+    };
+    void(^addWeaponTypeToClassMainhand)(id,NSString*) = ^(id weaponType,NSString* className)
+    {
+        id characterClass = [classes objectForKey:className];
+        [characterClass addMainHandWeaponTypesObject:weaponType];
+    };
+    void(^addWeaponTypeToClassOffhand)(id,NSString*) = ^(id weaponType,NSString* className)
+    {
+        id characterClass = [classes objectForKey:className];
+        [characterClass addOffHandWeaponTypesObject:weaponType];
+    };
+    void(^addWeaponTypeToClassTwohand)(id,NSString*) = ^(id weaponType,NSString* className)
+    {
+        id characterClass = [classes objectForKey:className];
+        [characterClass addTwoHandWeaponTypesObject:weaponType];
+    };
+    void(^addWeaponTypeToClassAquatic)(id,NSString*) = ^(id weaponType,NSString* className)
+    {
+        id characterClass = [classes objectForKey:className];
+        [characterClass addAquaticWeaponTypesObject:weaponType];
+    };
+    
+    //Weapon Types
+    id axe = addWeaponType(@"Axe");
+    //
+    addWeaponTypeToClassMainhand(axe,@"Necromancer");
+    addWeaponTypeToClassMainhand(axe,@"Thief");
+    addWeaponTypeToClassMainhand(axe,@"Warrior");
+    addWeaponTypeToClassOffhand(axe,@"Warrior");
+    addWeaponTypeToClassMainhand(axe,@"Ranger");
+    addWeaponTypeToClassOffhand(axe,@"Ranger");
+    
+    id dagger = addWeaponType(@"Dagger");
+    //
+    addWeaponTypeToClassMainhand(dagger,@"Necromancer");
+    addWeaponTypeToClassOffhand(dagger,@"Necromancer");
+    addWeaponTypeToClassMainhand(dagger,@"Thief");
+    addWeaponTypeToClassOffhand(dagger,@"Thief");
+    addWeaponTypeToClassMainhand(dagger,@"Elementalist");
+    addWeaponTypeToClassOffhand(dagger,@"Elementalist");
+    addWeaponTypeToClassOffhand(dagger,@"Ranger");
+    
+    id focus = addWeaponType(@"Focus");
+    //
+    addWeaponTypeToClassOffhand(focus,@"Necromancer");
+    addWeaponTypeToClassOffhand(focus,@"Thief");
+    addWeaponTypeToClassOffhand(focus,@"Elementalist");
+    addWeaponTypeToClassOffhand(focus,@"Mesmer");
+    addWeaponTypeToClassOffhand(focus,@"Guardian");
+    
+    id greatSword = addWeaponType(@"Great Sword");
+    //
+    addWeaponTypeToClassTwohand(greatSword,@"Warrior");
+    addWeaponTypeToClassTwohand(greatSword,@"Ranger");
+    addWeaponTypeToClassTwohand(greatSword,@"Mesmer");
+    addWeaponTypeToClassTwohand(greatSword,@"Guardian");
+    
+    id hammer = addWeaponType(@"Hammer");
+    //
+    addWeaponTypeToClassTwohand(hammer,@"Warrior");
+    addWeaponTypeToClassTwohand(hammer,@"Guardian");
+    
+    id harpoonGun = addWeaponType(@"Harpoon Gun");
+    //
+    addWeaponTypeToClassAquatic(harpoonGun,@"Engineer");
+    addWeaponTypeToClassAquatic(harpoonGun,@"Warrior");
+    addWeaponTypeToClassAquatic(harpoonGun,@"Ranger");
+    
+    id mace = addWeaponType(@"Mace");
+    //
+    addWeaponTypeToClassMainhand(mace,@"Warrior");
+    addWeaponTypeToClassOffhand(mace,@"Warrior");
+    addWeaponTypeToClassMainhand(mace,@"Guardian");
+    
+    id pistol = addWeaponType(@"Pistol");
+    //
+    addWeaponTypeToClassOffhand(pistol,@"Engineer");
+    addWeaponTypeToClassMainhand(pistol,@"Engineer");
+    addWeaponTypeToClassOffhand(pistol,@"Mesmer");
+    
+    id rifle = addWeaponType(@"Rifle");
+    //
+    addWeaponTypeToClassTwohand(rifle,@"Engineer");
+    addWeaponTypeToClassTwohand(rifle,@"Warrior");
+    
+    id scepter = addWeaponType(@"Scepter");
+    //
+    addWeaponTypeToClassMainhand(scepter,@"Necromancer");
+    addWeaponTypeToClassMainhand(scepter,@"Thief");
+    addWeaponTypeToClassMainhand(scepter,@"Elementalist");
+    addWeaponTypeToClassMainhand(scepter,@"Mesmer");
+    addWeaponTypeToClassMainhand(scepter,@"Guardian");
+    
+    id shield = addWeaponType(@"Shield");
+    //
+    addWeaponTypeToClassOffhand(shield,@"Engineer");
+    addWeaponTypeToClassOffhand(shield,@"Warrior");
+    addWeaponTypeToClassOffhand(shield,@"Guardian");
+    
+    id shortBow = addWeaponType(@"Short Bow");
+    //
+    addWeaponTypeToClassTwohand(shortBow,@"Ranger");
+    
+    id longBow = addWeaponType(@"Long Bow");
+    //
+    addWeaponTypeToClassTwohand(longBow,@"Warrior");
+    addWeaponTypeToClassTwohand(longBow,@"Ranger");
+    
+    id spear = addWeaponType(@"Spear");
+    //
+    addWeaponTypeToClassAquatic(spear,@"Necromancer");
+    addWeaponTypeToClassAquatic(spear,@"Thief");
+    addWeaponTypeToClassAquatic(spear,@"Warrior");
+    addWeaponTypeToClassAquatic(spear,@"Ranger");
+    addWeaponTypeToClassAquatic(spear,@"Mesmer");
+    addWeaponTypeToClassAquatic(spear,@"Guardian");
+    
+    id staff = addWeaponType(@"Staff");
+    //
+    addWeaponTypeToClassTwohand(staff,@"Necromancer");
+    addWeaponTypeToClassTwohand(staff,@"Thief");
+    addWeaponTypeToClassTwohand(staff,@"Elementalist");
+    addWeaponTypeToClassTwohand(staff,@"Mesmer");
+    addWeaponTypeToClassTwohand(staff,@"Guardian");
+    
+    id sword = addWeaponType(@"Sword");
+    //
+    addWeaponTypeToClassMainhand(sword,@"Ranger");
+    addWeaponTypeToClassMainhand(sword,@"Warrior");
+    addWeaponTypeToClassOffhand(sword,@"Warrior");
+    addWeaponTypeToClassMainhand(sword,@"Mesmer");
+    addWeaponTypeToClassOffhand(sword,@"Mesmer");
+    addWeaponTypeToClassMainhand(sword,@"Guardian");
+    
+    id torch = addWeaponType(@"Torch");
+    //
+    addWeaponTypeToClassOffhand(torch,@"Ranger");
+    addWeaponTypeToClassOffhand(torch,@"Mesmer");
+    addWeaponTypeToClassOffhand(torch,@"Guardian");
+    
+    id trident = addWeaponType(@"Trident");
+    //
+    addWeaponTypeToClassAquatic(trident,@"Necromancer");
+    addWeaponTypeToClassAquatic(trident,@"Thief");
+    addWeaponTypeToClassAquatic(trident,@"Elementalist");
+    addWeaponTypeToClassAquatic(trident,@"Mesmer");
+    addWeaponTypeToClassAquatic(trident,@"Guardian");
+
+    id warhorn = addWeaponType(@"War Horn");
+    //
+    addWeaponTypeToClassOffhand(warhorn,@"Necromancer");
+    addWeaponTypeToClassOffhand(warhorn,@"Thief");
+    addWeaponTypeToClassOffhand(warhorn,@"Warrior");
+    addWeaponTypeToClassOffhand(warhorn,@"Ranger");
+}
 -(void)addRacesAndClasses
 {
     id(^addRace)(NSString*,NSString*) = ^(NSString* name,NSString* description)
@@ -530,6 +695,7 @@
     dungeons = [NSMutableDictionary new];
     
     [self addClasses];
+    [self addWeaponTypes];
     [self addLocations];
     [self addRacesAndClasses];
     [self addZones];

@@ -38,6 +38,12 @@
 
 #pragma mark View lifecycle
 #define LAST_VIEWED_FEED_URL_KEY @"LAST_VIEWED_FEED_URL"
+
+#define DEFAULT_RSS_FEED_URL @"http://www.tentonhammer.com/gw2/all/feed"
+
+//Official RSS Feed is incompatible - August 2, 2012
+//#define DEFAULT_RSS_FEED_URL @"https://www.guildwars2.com/en/feed/"
+
 - (void)viewDidLoad 
 {
 	// Super
@@ -103,7 +109,7 @@
     
 	// Parse
     NSString* lastViewedFeedURLString = [[NSUserDefaults standardUserDefaults] objectForKey:LAST_VIEWED_FEED_URL_KEY];
-    NSString* URLString = (lastViewedFeedURLString) ? lastViewedFeedURLString : @"http://www.guildwars2.com/en/rss.xml";
+    NSString* URLString = (lastViewedFeedURLString) ? lastViewedFeedURLString : DEFAULT_RSS_FEED_URL;
     
 	NSURL *feedURL = [NSURL URLWithString:URLString];
 	feedParser = [[MWFeedParser alloc] initWithFeedURL:feedURL];
@@ -134,15 +140,17 @@
 	[feedParser parse];
 	self.tableView.userInteractionEnabled = NO;
 }
-#define guildwwars2COM @"guildwars2.com"
+
+//#define guildwwars2COM @"guildwars2.com"
 #define arenaNetBlogCOM @"arena.net/blog"
 #define guildwars2pcCOM @"guildwars2pc.com"
 #define tentonhammerCOM @"tentonhammer.com"
 #define massivelyCOM @"massively.joystiq.com"
+#define guildwarsInsidierCOM @"guildwarsinsider.com"
 
 - (void) changeDatasource
 {
-    UIActionSheet* shareActionSheet = [[UIActionSheet alloc] initWithTitle:@"G.W.2 News Sources" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:guildwwars2COM,arenaNetBlogCOM,guildwars2pcCOM,tentonhammerCOM,massivelyCOM, nil];
+    UIActionSheet* shareActionSheet = [[UIActionSheet alloc] initWithTitle:@"G.W.2 News Sources" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:tentonhammerCOM,arenaNetBlogCOM,guildwarsInsidierCOM,guildwars2pcCOM,massivelyCOM, nil];
     shareActionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     
     [shareActionSheet showFromBarButtonItem:self.navigationItem.rightBarButtonItem animated:YES];
@@ -159,11 +167,11 @@
     NSString* title = [actionSheet buttonTitleAtIndex:buttonIndex];
     NSURL* url;
     
-    if([title isEqualToString:guildwwars2COM])
+    /*if([title isEqualToString:guildwwars2COM])
     {
-        url = [NSURL URLWithString:@"http://www.guildwars2.com/en/rss.xml"];
+        url = [NSURL URLWithString:DEFAULT_RSS_FEED_URL];
     }
-    else if([title isEqualToString:arenaNetBlogCOM])
+    else */if([title isEqualToString:arenaNetBlogCOM])
     {
         url = [NSURL URLWithString:@"feed://www.arena.net/blog/category/guild-wars-2/feed"];
     }
@@ -173,11 +181,15 @@
     }
     else if ([title isEqualToString:tentonhammerCOM])
     {
-        url = [NSURL URLWithString:@"http://www.tentonhammer.com/gw2/all/feed"];
+        url = [NSURL URLWithString:DEFAULT_RSS_FEED_URL];
     }
     else if ([title isEqualToString:massivelyCOM])
     {
         url = [NSURL URLWithString:@"feed://massively.joystiq.com/category/guild-wars-2/rss.xml"];
+    }
+    else if([title isEqualToString:guildwarsInsidierCOM])
+    {
+        url = [NSURL URLWithString:@"feed://www.guildwarsinsider.com/feed/"];
     }
     else
     {

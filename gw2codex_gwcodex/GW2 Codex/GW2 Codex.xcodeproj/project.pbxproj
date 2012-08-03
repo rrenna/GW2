@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75187CBF15CC508600417829 /* Axe.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CAC15CC508600417829 /* Axe.png */; };
+		75187CC015CC508600417829 /* Dagger.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CAD15CC508600417829 /* Dagger.png */; };
+		75187CC115CC508600417829 /* Focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CAE15CC508600417829 /* Focus.png */; };
+		75187CC215CC508600417829 /* GreatSword.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CAF15CC508600417829 /* GreatSword.png */; };
+		75187CC315CC508600417829 /* Hammer.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CB015CC508600417829 /* Hammer.png */; };
+		75187CC415CC508600417829 /* HarpoonGun.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CB115CC508600417829 /* HarpoonGun.png */; };
+		75187CC515CC508600417829 /* Longbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CB215CC508600417829 /* Longbow.png */; };
+		75187CC615CC508600417829 /* Mace.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CB315CC508600417829 /* Mace.png */; };
+		75187CC715CC508600417829 /* Pistol.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CB415CC508600417829 /* Pistol.png */; };
+		75187CC815CC508600417829 /* Rifle.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CB515CC508600417829 /* Rifle.png */; };
+		75187CC915CC508600417829 /* Scepter.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CB615CC508600417829 /* Scepter.png */; };
+		75187CCA15CC508600417829 /* Shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CB715CC508600417829 /* Shield.png */; };
+		75187CCB15CC508600417829 /* ShortBow.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CB815CC508600417829 /* ShortBow.png */; };
+		75187CCC15CC508600417829 /* Spear.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CB915CC508600417829 /* Spear.png */; };
+		75187CCD15CC508600417829 /* Staff.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CBA15CC508600417829 /* Staff.png */; };
+		75187CCE15CC508600417829 /* Sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CBB15CC508600417829 /* Sword.png */; };
+		75187CCF15CC508600417829 /* Torch.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CBC15CC508600417829 /* Torch.png */; };
+		75187CD015CC508600417829 /* Trident.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CBD15CC508600417829 /* Trident.png */; };
+		75187CD115CC508600417829 /* WarHorn.png in Resources */ = {isa = PBXBuildFile; fileRef = 75187CBE15CC508600417829 /* WarHorn.png */; };
 		F0020BDB14434D6800592C94 /* divider.png in Resources */ = {isa = PBXBuildFile; fileRef = F0020BDA14434D6800592C94 /* divider.png */; };
 		F0020BDE14435E5000592C94 /* rowPreview_uknown.png in Resources */ = {isa = PBXBuildFile; fileRef = F0020BDD14435E5000592C94 /* rowPreview_uknown.png */; };
 		F00879FB1412A2480015AA82 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = F00879F91412A2480015AA82 /* Background.png */; };
@@ -267,6 +286,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75187CAC15CC508600417829 /* Axe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Axe.png; sourceTree = "<group>"; };
+		75187CAD15CC508600417829 /* Dagger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dagger.png; sourceTree = "<group>"; };
+		75187CAE15CC508600417829 /* Focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Focus.png; sourceTree = "<group>"; };
+		75187CAF15CC508600417829 /* GreatSword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreatSword.png; sourceTree = "<group>"; };
+		75187CB015CC508600417829 /* Hammer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hammer.png; sourceTree = "<group>"; };
+		75187CB115CC508600417829 /* HarpoonGun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HarpoonGun.png; sourceTree = "<group>"; };
+		75187CB215CC508600417829 /* Longbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Longbow.png; sourceTree = "<group>"; };
+		75187CB315CC508600417829 /* Mace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mace.png; sourceTree = "<group>"; };
+		75187CB415CC508600417829 /* Pistol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pistol.png; sourceTree = "<group>"; };
+		75187CB515CC508600417829 /* Rifle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rifle.png; sourceTree = "<group>"; };
+		75187CB615CC508600417829 /* Scepter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scepter.png; sourceTree = "<group>"; };
+		75187CB715CC508600417829 /* Shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shield.png; sourceTree = "<group>"; };
+		75187CB815CC508600417829 /* ShortBow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShortBow.png; sourceTree = "<group>"; };
+		75187CB915CC508600417829 /* Spear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spear.png; sourceTree = "<group>"; };
+		75187CBA15CC508600417829 /* Staff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Staff.png; sourceTree = "<group>"; };
+		75187CBB15CC508600417829 /* Sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sword.png; sourceTree = "<group>"; };
+		75187CBC15CC508600417829 /* Torch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Torch.png; sourceTree = "<group>"; };
+		75187CBD15CC508600417829 /* Trident.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trident.png; sourceTree = "<group>"; };
+		75187CBE15CC508600417829 /* WarHorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WarHorn.png; sourceTree = "<group>"; };
 		F0020BDA14434D6800592C94 /* divider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = divider.png; path = ../../Data/divider.png; sourceTree = "<group>"; };
 		F0020BDD14435E5000592C94 /* rowPreview_uknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rowPreview_uknown.png; path = ../../Data/rowPreview_uknown.png; sourceTree = "<group>"; };
 		F00879F91412A2480015AA82 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Background.png; path = ../../Data/Background.png; sourceTree = "<group>"; };
@@ -639,6 +677,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75187CAB15CC508600417829 /* WeaponIcons */ = {
+			isa = PBXGroup;
+			children = (
+				75187CAC15CC508600417829 /* Axe.png */,
+				75187CAD15CC508600417829 /* Dagger.png */,
+				75187CAE15CC508600417829 /* Focus.png */,
+				75187CAF15CC508600417829 /* GreatSword.png */,
+				75187CB015CC508600417829 /* Hammer.png */,
+				75187CB115CC508600417829 /* HarpoonGun.png */,
+				75187CB215CC508600417829 /* Longbow.png */,
+				75187CB315CC508600417829 /* Mace.png */,
+				75187CB415CC508600417829 /* Pistol.png */,
+				75187CB515CC508600417829 /* Rifle.png */,
+				75187CB615CC508600417829 /* Scepter.png */,
+				75187CB715CC508600417829 /* Shield.png */,
+				75187CB815CC508600417829 /* ShortBow.png */,
+				75187CB915CC508600417829 /* Spear.png */,
+				75187CBA15CC508600417829 /* Staff.png */,
+				75187CBB15CC508600417829 /* Sword.png */,
+				75187CBC15CC508600417829 /* Torch.png */,
+				75187CBD15CC508600417829 /* Trident.png */,
+				75187CBE15CC508600417829 /* WarHorn.png */,
+			);
+			name = WeaponIcons;
+			path = ../../Data/WeaponIcons;
+			sourceTree = "<group>";
+		};
 		F00879F61411D9100015AA82 /* Zones */ = {
 			isa = PBXGroup;
 			children = (
@@ -1240,6 +1305,7 @@
 		F0D8431314088C7500A6B8CF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				75187CAB15CC508600417829 /* WeaponIcons */,
 				F02EC4F115AA865E003B51C3 /* Dungeons */,
 				F02EC4ED15AA68BA003B51C3 /* dungeonsButton.png */,
 				F0A6C7C51541CA130033C544 /* infoButton.png */,
@@ -1605,6 +1671,25 @@
 				F06A5A1615AE77C700487329 /* dungeonPreview_TwilightArbor.png in Resources */,
 				F06A5A1715AE77C700487329 /* dungeonPreview_HonoroftheWaves.png in Resources */,
 				F06A5A1815AE77C700487329 /* dungeonPreview_CrucibleofEternity.png in Resources */,
+				75187CBF15CC508600417829 /* Axe.png in Resources */,
+				75187CC015CC508600417829 /* Dagger.png in Resources */,
+				75187CC115CC508600417829 /* Focus.png in Resources */,
+				75187CC215CC508600417829 /* GreatSword.png in Resources */,
+				75187CC315CC508600417829 /* Hammer.png in Resources */,
+				75187CC415CC508600417829 /* HarpoonGun.png in Resources */,
+				75187CC515CC508600417829 /* Longbow.png in Resources */,
+				75187CC615CC508600417829 /* Mace.png in Resources */,
+				75187CC715CC508600417829 /* Pistol.png in Resources */,
+				75187CC815CC508600417829 /* Rifle.png in Resources */,
+				75187CC915CC508600417829 /* Scepter.png in Resources */,
+				75187CCA15CC508600417829 /* Shield.png in Resources */,
+				75187CCB15CC508600417829 /* ShortBow.png in Resources */,
+				75187CCC15CC508600417829 /* Spear.png in Resources */,
+				75187CCD15CC508600417829 /* Staff.png in Resources */,
+				75187CCE15CC508600417829 /* Sword.png in Resources */,
+				75187CCF15CC508600417829 /* Torch.png in Resources */,
+				75187CD015CC508600417829 /* Trident.png in Resources */,
+				75187CD115CC508600417829 /* WarHorn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

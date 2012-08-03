@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1800" systemVersion="12A269" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="12A269" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="SGCharacter" parentEntity="SGCreature">
         <attribute name="dislikes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="likes" optional="YES" attributeType="String" syncable="YES"/>
@@ -35,12 +35,15 @@
         <relationship name="advancedClasses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SGCharacterClass" inverseName="parentClass" inverseEntity="SGCharacterClass">
             <userInfo/>
         </relationship>
+        <relationship name="aquaticWeaponTypes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SGWeaponType" inverseName="aquaticClasses" inverseEntity="SGWeaponType" syncable="YES"/>
         <relationship name="companions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SGCharacter" inverseName="characterClassesCompanion" inverseEntity="SGCharacter">
             <userInfo/>
         </relationship>
         <relationship name="craftingSkills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SGCraftingSkill" inverseName="characterClasses" inverseEntity="SGCraftingSkill">
             <userInfo/>
         </relationship>
+        <relationship name="mainHandWeaponTypes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SGWeaponType" inverseName="mainHandClasses" inverseEntity="SGWeaponType" syncable="YES"/>
+        <relationship name="offHandWeaponTypes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SGWeaponType" inverseName="offHandClasses" inverseEntity="SGWeaponType" syncable="YES"/>
         <relationship name="parentClass" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="SGCharacterClass" inverseName="advancedClasses" inverseEntity="SGCharacterClass">
             <userInfo/>
         </relationship>
@@ -51,6 +54,7 @@
             <userInfo/>
         </relationship>
         <relationship name="skillTrees" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SGSkillTree" inverseName="characterClass" inverseEntity="SGSkillTree" syncable="YES"/>
+        <relationship name="twoHandWeaponTypes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SGWeaponType" inverseName="twoHandClasses" inverseEntity="SGWeaponType" syncable="YES"/>
         <userInfo/>
     </entity>
     <entity name="SGCharacterSkill" parentEntity="SGSkill" syncable="YES">
@@ -177,6 +181,12 @@
         <relationship name="location" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="SGLocation" inverseName="warzones" inverseEntity="SGLocation" syncable="YES"/>
         <userInfo/>
     </entity>
+    <entity name="SGWeaponType" parentEntity="SGEntity" syncable="YES">
+        <relationship name="aquaticClasses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SGCharacterClass" inverseName="aquaticWeaponTypes" inverseEntity="SGCharacterClass" syncable="YES"/>
+        <relationship name="mainHandClasses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SGCharacterClass" inverseName="mainHandWeaponTypes" inverseEntity="SGCharacterClass" syncable="YES"/>
+        <relationship name="offHandClasses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SGCharacterClass" inverseName="offHandWeaponTypes" inverseEntity="SGCharacterClass" syncable="YES"/>
+        <relationship name="twoHandClasses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SGCharacterClass" inverseName="twoHandWeaponTypes" inverseEntity="SGCharacterClass" syncable="YES"/>
+    </entity>
     <entity name="SGZone" representedClassName="SGPlanet" parentEntity="SGLocation">
         <attribute name="Allegiance" optional="YES" attributeType="String">
             <userInfo/>
@@ -194,7 +204,7 @@
     </entity>
     <elements>
         <element name="SGCharacter" positionX="0" positionY="0" width="128" height="193"/>
-        <element name="SGCharacterClass" positionX="0" positionY="0" width="128" height="238"/>
+        <element name="SGCharacterClass" positionX="0" positionY="0" width="128" height="300"/>
         <element name="SGCharacterSkill" positionX="0" positionY="0" width="128" height="58"/>
         <element name="SGCraftingSkill" positionX="0" positionY="0" width="128" height="88"/>
         <element name="SGCreature" positionX="0" positionY="0" width="128" height="43"/>
@@ -209,5 +219,6 @@
         <element name="SGSkillTree" positionX="124" positionY="-162" width="128" height="73"/>
         <element name="SGWarzone" positionX="-153" positionY="-144" width="128" height="73"/>
         <element name="SGZone" positionX="-288" positionY="167" width="128" height="103"/>
+        <element name="SGWeaponType" positionX="160" positionY="192" width="128" height="105"/>
     </elements>
 </model>

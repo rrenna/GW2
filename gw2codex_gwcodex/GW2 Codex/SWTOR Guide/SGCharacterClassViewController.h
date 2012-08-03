@@ -15,6 +15,7 @@
     IBOutlet UILabel* HeadlineLabel;
     IBOutlet UILabel* uniqueAttributeLabel;
     IBOutlet UILabel* uniqueAttributeEffectLabel;
+    IBOutlet UITableView* weaponTypesTableView;
     
     //Special Abilities
     IBOutlet UIView* specialAbilityView;
