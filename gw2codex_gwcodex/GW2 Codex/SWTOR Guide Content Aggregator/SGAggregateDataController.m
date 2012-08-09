@@ -33,6 +33,8 @@
 #define FROSTGORGE_SOUND @"Frostgorge Sound"
 #define MOUNT_MAELSTROM @"Mount Maelstrom"
 #define FIREHEART_RISE @"Fireheart Rise"
+#define BLAZERIDGE_STEPPES @"Blazeridge Steppes"
+#define DIESSA_PLATEAU @"Diessa Plateau"
 
 //Regions
 #define SHIVERPEAK_MOUNTAINS @"Shiverpeak Mountains"
@@ -483,6 +485,14 @@
     [fireheartRise setValue:@"Unknown" forKey:@"Terrain"];
     [fireheartRise setValue:@"Fireheart Rise is a high level zone located in the northernmost reaches of Ascalon. The Flame Legion's Citadel of Flame has been established here." forKey:@"Description"];
     //TODO: Fill in FIREHEART RISE - find more details, fill in terrain type
+    
+    id blazerdigeSteppes = addZone(BLAZERIDGE_STEPPES,ASCALON);
+    [blazerdigeSteppes setValue:@"Volcanic Waste" forKey:@"Terrain"];
+    [blazerdigeSteppes setValue:@"The charr once ruled the Blazeridge Steppes, but the rising of the Elder Dragon Kralkatorrik left a corrupted swath across the land. Now the legions contend not only against the creatures of the Dragonbrand, but against the ogres who have come down from the mountains." forKey:@"Description"];
+    
+    id diessaPlateau = addZone(DIESSA_PLATEAU,ASCALON);
+    [diessaPlateau setValue:@"Desert" forKey:@"Terrain"];
+    [diessaPlateau setValue:@"The Diessa Plateau's ranches and mills supply the legions with food and materials critical to their operations. Saboteurs, such as human Separatists and the Flame Legion, prey on workers, buildings, and requisitions shipments throughout the region. It is found north of the Plains of Ashford and Black Citadel." forKey:@"Description"];
 }
 -(void)addDungeons
 {

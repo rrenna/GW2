@@ -257,6 +257,8 @@
 		F0DF3FB1145657FA00913DC9 /* SGSkillTreeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0DF3FB0145657F900913DC9 /* SGSkillTreeViewController.xib */; };
 		F0DF3FB51456653300913DC9 /* SGSkillTreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DF3FB41456653300913DC9 /* SGSkillTreeViewController.m */; };
 		F0E046BD1418EBCA00C58F14 /* flashpointsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F0E046BC1418EBCA00C58F14 /* flashpointsButton.png */; };
+		F0E18BCF15D33A1F008FDFD0 /* zonePreview_DiessaPlateau.png in Resources */ = {isa = PBXBuildFile; fileRef = F0E18BCD15D33A1F008FDFD0 /* zonePreview_DiessaPlateau.png */; };
+		F0E18BD015D33A1F008FDFD0 /* zonePreview_BlazeridgeSteppes.png in Resources */ = {isa = PBXBuildFile; fileRef = F0E18BCE15D33A1F008FDFD0 /* zonePreview_BlazeridgeSteppes.png */; };
 		F0E1C697141836DF0094D111 /* SGFlashpointViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1C696141836DF0094D111 /* SGFlashpointViewController.xib */; };
 		F0E1C69A1418371F0094D111 /* SGFlashpointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1C6991418371F0094D111 /* SGFlashpointViewController.m */; };
 		F0E1C69C14183CBA0094D111 /* newsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F0E1C69B14183CBA0094D111 /* newsButton.png */; };
@@ -604,6 +606,8 @@
 		F0DF3FB31456651500913DC9 /* SGSkillTreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSkillTreeViewController.h; sourceTree = "<group>"; };
 		F0DF3FB41456653300913DC9 /* SGSkillTreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSkillTreeViewController.m; sourceTree = "<group>"; };
 		F0E046BC1418EBCA00C58F14 /* flashpointsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flashpointsButton.png; path = ../../Data/Buttons/flashpointsButton.png; sourceTree = "<group>"; };
+		F0E18BCD15D33A1F008FDFD0 /* zonePreview_DiessaPlateau.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zonePreview_DiessaPlateau.png; path = ../../Data/Zones/zonePreview_DiessaPlateau.png; sourceTree = "<group>"; };
+		F0E18BCE15D33A1F008FDFD0 /* zonePreview_BlazeridgeSteppes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zonePreview_BlazeridgeSteppes.png; path = ../../Data/Zones/zonePreview_BlazeridgeSteppes.png; sourceTree = "<group>"; };
 		F0E1C696141836DF0094D111 /* SGFlashpointViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGFlashpointViewController.xib; sourceTree = "<group>"; };
 		F0E1C6981418371E0094D111 /* SGFlashpointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFlashpointViewController.h; sourceTree = "<group>"; };
 		F0E1C6991418371F0094D111 /* SGFlashpointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFlashpointViewController.m; sourceTree = "<group>"; };
@@ -707,6 +711,8 @@
 		F00879F61411D9100015AA82 /* Zones */ = {
 			isa = PBXGroup;
 			children = (
+				F0E18BCD15D33A1F008FDFD0 /* zonePreview_DiessaPlateau.png */,
+				F0E18BCE15D33A1F008FDFD0 /* zonePreview_BlazeridgeSteppes.png */,
 				F06A5A1115AE768F00487329 /* zonePreview_FireheartRise.png */,
 				F02EC50D15ADA84A003B51C3 /* zonePreview_FrostgorgeSound.png */,
 				F02EC50B15ADA666003B51C3 /* zonePreview_CaledonForest.png */,
@@ -1690,6 +1696,8 @@
 				75187CCF15CC508600417829 /* Torch.png in Resources */,
 				75187CD015CC508600417829 /* Trident.png in Resources */,
 				75187CD115CC508600417829 /* WarHorn.png in Resources */,
+				F0E18BCF15D33A1F008FDFD0 /* zonePreview_DiessaPlateau.png in Resources */,
+				F0E18BD015D33A1F008FDFD0 /* zonePreview_BlazeridgeSteppes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

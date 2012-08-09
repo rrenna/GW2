@@ -392,7 +392,7 @@
             int counter = 0;
             #define weaponIconWidth 35
             #define weaponIconHeight 30
-            #define weaponIconSpacing 15
+            #define weaponIconSpacing 25
             for(id weapon in [weaponCollection allObjects])
             {
                 NSString* name = [weapon valueForKey:@"Name"];
